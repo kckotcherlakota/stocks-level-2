@@ -1,5 +1,13 @@
 # LESSONS (newest first)
 
+## 2026-11-09 — IWM 281C re-entry: +$8.91 (0.27 → 0.36)
+- What worked: re-entering a clean trend after a stop-out; stop on the underlying (IWM swing low)
+  held through a 279.755 wick that a premium-based stop would have hit; disaster stop moved up only
+  once +26% and kept 0.09 under the bid.
+- Exit friction: at target I cancelled the stop then placed a limit AT the target (0.39) — the
+  quote dipped 4¢ in seconds and I had to cancel/replace. When taking profit on 0DTE, sell at the
+  BID (or bid+0.01) immediately; the extra penny isn't worth the unprotected seconds.
+
 ## 2026-11-09 — IWM 280C 0DTE: +$10 open gain became -$1.09 (stop too tight)
 - Raised the stop to 0.45 (2¢ under 0.47 entry) when bid hit 0.56. The 0DTE option swung
   0.47 ↔ 0.57 every few minutes on normal noise; a 1-minute dip hit the stop, then it bounced to 0.53.
