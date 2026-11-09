@@ -13,7 +13,9 @@
 - If the bankroll falls to $40, stop trading and ask the user before continuing.
 - **Needing more than $80 requires the user's explicit approval** (user instruction 2026-11-09).
   Ask in the session or by email, and wait for a yes before using any money beyond the bankroll.
-  Profits stay in the bankroll, so it can grow above $80 without asking.
+  Profits stay in the bankroll, so it can grow above $80 without asking (confirmed by user 2026-11-09).
+  The cash floor stays fixed at $124.29: profits add to cash and bankroll equally, so the
+  user's reserved money is never touched.
 
 ## Risk limits (non-negotiable)
 | Rule | Limit |
