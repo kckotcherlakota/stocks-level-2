@@ -1,5 +1,15 @@
 # LESSONS (newest first)
 
+## 2026-11-09 — IWM 280C 0DTE: +$10 open gain became -$1.09 (stop too tight)
+- Raised the stop to 0.45 (2¢ under 0.47 entry) when bid hit 0.56. The 0DTE option swung
+  0.47 ↔ 0.57 every few minutes on normal noise; a 1-minute dip hit the stop, then it bounced to 0.53.
+- Rule: don't trail a 0DTE stop to breakeven on premium noise. Either (a) trail only after +30%
+  and keep it ≥ 0.08 below the bid, or (b) use the UNDERLYING as the stop (e.g. IWM < VWAP or
+  < last 5-min swing low) and exit manually; keep the broker stop only as a disaster stop.
+- Take profit faster on choppy grinds: +$9–10 was available at 10:27 (bid 0.56). With a
+  $20 daily target and a $47 position, taking +20% ($9) on a stall is fine.
+- Every 30 s check must include ORDER/POSITION state, not just quotes (missed the fill by ~2 min).
+
 ## 2026-11-09 — platform limit: agent cannot place multi-leg (spread) orders
 - place_option_order with 2 legs fails: "this account requires the customer to approve agent-placed
   trades, and a multi-leg strategy cannot be sent for approval yet". Approval setting reads false
