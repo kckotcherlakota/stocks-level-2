@@ -63,7 +63,10 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 
 ## Execution
 - **Monitoring cadence (user rule 11/09):** whenever money is at work (open order OR open position),
-  check EVERY 1 MINUTE (send_later delay_minutes=1). With nothing at work, scan every 10–15 min.
+  check EVERY 30 SECONDS (user rule 11/09, updated). How: Monitor tool running
+  `while true; do sleep 30; echo tick; done` (timeout 30 min, re-arm on expiry); each tick → check
+  option quote, underlying vs VWAP, stop order. send_later (1-min min, often 2–4 min late) is only a
+  fallback. With nothing at work, scan every 10–15 min.
 - After an entry fills, immediately place a broker-side stop_market sell-to-close at the -35% level
   as a backstop. To take profit: cancel the stop, then sell with a limit at mid.
 - Limit orders at mid (or mid + 0.01). If not filled in ~60s, re-evaluate — don't chase > 2 ticks.
