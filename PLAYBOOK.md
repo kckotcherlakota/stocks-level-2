@@ -7,7 +7,9 @@
 ## Agent bankroll — ONLY $80 (user instruction 2026-11-09)
 - The agent's total money is **$80**, not the account balance. The rest of the account is
   reserved by the user for other purposes and must never be used, even if buying power shows more.
-- Bankroll = $80 + cumulative realized agent P&L (tracked in `STATE.md`).
+- Bankroll = $80 + cumulative realized P&L **from the agent's own trades only** (tracked in `STATE.md`).
+  Deposits, interest, dividends, or any other money arriving in the account is the user's,
+  never the agent's, even if it lands in this account.
 - **Cash floor:** account cash must never go below **$124.29** ($204.29 starting cash − $80).
   Check this before every order; if an order could break the floor, don't place it.
 - If the bankroll falls to $40, stop trading and ask the user before continuing.
