@@ -54,6 +54,8 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - With a $40/trade cap, single ATM SPY/QQQ 0DTE contracts ($150–250) are unaffordable → the
   default vehicle would be a $1-wide 0DTE debit spread — BUT agent multi-leg orders are rejected
   by Robinhood (see LESSONS 11/09). User decision 11/09: no spreads — buy single calls/puts only, still ≤ $40 each.
+- **User decision 11/09 (afternoon): calls and puts ONLY — no spreads, no iron condors.** Budget stays
+  $80 + own profits. (A $1-wide condor needs $100 collateral > bankroll and would breach the cash floor.)
   Prefer IWM (cheaper strikes, ~0.30 delta for ≤$0.40) over far-OTM SPY/QQQ.
 
 ## Time-of-day rule (11/09)
