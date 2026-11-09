@@ -11,6 +11,9 @@
 - **Cash floor:** account cash must never go below **$124.29** ($204.29 starting cash − $80).
   Check this before every order; if an order could break the floor, don't place it.
 - If the bankroll falls to $40, stop trading and ask the user before continuing.
+- **Needing more than $80 requires the user's explicit approval** (user instruction 2026-11-09).
+  Ask in the session or by email, and wait for a yes before using any money beyond the bankroll.
+  Profits stay in the bankroll, so it can grow above $80 without asking.
 
 ## Risk limits (non-negotiable)
 | Rule | Limit |
