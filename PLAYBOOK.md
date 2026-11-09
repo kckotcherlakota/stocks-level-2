@@ -30,6 +30,7 @@
 | Max daily loss | **-$15** from the day's start → stop trading for the day (capital first) |
 | Daily profit lock | No profit cap. Once day P&L ≥ +$20, never let it fall below 50% of the day's peak (stop for the day if it does) |
 | Max trades/day | 100 (user 11/09: squeeze every opportunity) — but every trade must still pass the setup checklist; no revenge or boredom trades |
+| After 3 winning trades in a day (user 11/09) | "Careful mode": A+ setups only (all 4 checklist items), size ≤ half of normal (≤ ~$25), profit-lock tightens to 70% of the day's peak, and stop for the day after the first loss in careful mode |
 | Weekly drawdown kill switch | -$30 for the week → stop until next Monday, review |
 | No new 0DTE entries after | 3:00 PM ET; flat on all 0DTE by 3:45 PM ET |
 | No entries | first 10 min after open (9:30–9:40) unless a clear gap setup; not in the minute of FOMC/CPI |
