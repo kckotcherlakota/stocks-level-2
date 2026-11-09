@@ -27,9 +27,9 @@
 | Max deployed at once | the whole bankroll (≤ $80), but see per-trade limit |
 | Max per single trade (premium paid) | **$40**; at most 2 positions open at once |
 | Hard stop per trade | -35% of premium, or thesis invalid, whichever comes first |
-| Max daily loss | **-$15** → stop trading for the day |
-| Daily profit target | **+$20** → stop for the day, log notes |
-| Max trades/day | 3 round-trips (overtrading = spread bleed) |
+| Max daily loss | **-$15** from the day's start → stop trading for the day (capital first) |
+| Daily profit lock | No profit cap. Once day P&L ≥ +$20, never let it fall below 50% of the day's peak (stop for the day if it does) |
+| Max trades/day | 100 (user 11/09: squeeze every opportunity) — but every trade must still pass the setup checklist; no revenge or boredom trades |
 | Weekly drawdown kill switch | -$30 for the week → stop until next Monday, review |
 | No new 0DTE entries after | 3:00 PM ET; flat on all 0DTE by 3:45 PM ET |
 | No entries | first 10 min after open (9:30–9:40) unless a clear gap setup; not in the minute of FOMC/CPI |
