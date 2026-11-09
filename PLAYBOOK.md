@@ -52,7 +52,8 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Defined-risk debit spreads (level 3 allows) to cut theta and spread cost when IV is high.
 - With a $40/trade cap, single ATM SPY/QQQ 0DTE contracts ($150–250) are unaffordable → the
   default vehicle would be a $1-wide 0DTE debit spread — BUT agent multi-leg orders are rejected
-  by Robinhood (see LESSONS 11/09). Pending user decision on vehicle/size.
+  by Robinhood (see LESSONS 11/09). User decision 11/09: no spreads — buy single calls/puts only, still ≤ $40 each.
+  Prefer IWM (cheaper strikes, ~0.30 delta for ≤$0.40) over far-OTM SPY/QQQ.
 
 ## Setup checklist (need 3 of 4 before entry)
 1. Trend: price vs VWAP + 9/21 EMA on 5m in the same direction.
