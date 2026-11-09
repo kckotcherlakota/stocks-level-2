@@ -1,5 +1,13 @@
 # LESSONS (newest first)
 
+## 2026-11-09 — platform limit: agent cannot place multi-leg (spread) orders
+- place_option_order with 2 legs fails: "this account requires the customer to approve agent-placed
+  trades, and a multi-leg strategy cannot be sent for approval yet". Approval setting reads false
+  anyway. Re-test occasionally; until it works, spreads are NOT available.
+- With a $40/trade cap and single legs only, near-ATM SPY/QQQ/IWM 0DTE ($80–240) don't fit.
+- Day was a strong gap-and-go (SPY +1.7% by 9:56): pullback-to-VWAP entry never came. On trend
+  days after a big selloff, use a flag/consolidation break as the entry, not a deep pullback.
+
 ## 2026-11-09 — review of prior agent trades (Nov 5–6): net ≈ -$15 on 6 round-trips
 | Date | Contract | Entry | Exit | P&L |
 |---|---|---|---|---|
