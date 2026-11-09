@@ -62,6 +62,10 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 4. No macro event in the next 30 min (CPI, FOMC, jobs, Fed speakers).
 
 ## Execution
+- **Monitoring cadence (user rule 11/09):** whenever money is at work (open order OR open position),
+  check EVERY 1 MINUTE (send_later delay_minutes=1). With nothing at work, scan every 10–15 min.
+- After an entry fills, immediately place a broker-side stop_market sell-to-close at the -35% level
+  as a backstop. To take profit: cancel the stop, then sell with a limit at mid.
 - Limit orders at mid (or mid + 0.01). If not filled in ~60s, re-evaluate — don't chase > 2 ticks.
 - Decide the exit BEFORE entry: take profit at +30–50%, hard stop at -35%.
 - On a stop, exit at the bid — do not "wait for it to come back".
