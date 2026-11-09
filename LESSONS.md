@@ -1,5 +1,12 @@
 # LESSONS (newest first)
 
+## 2026-11-09 — IWM 282C x2 flag at HOD: -$6.18
+- Trend was 2.5 h old and SPY/QQQ were extended (+2.2% / +3.4%); the "flag" at 11:04 broke after
+  one small push. Late-morning (11:00–14:00) flags on an extended trend fail more often.
+- Far-OTM (delta 0.21) magnifies this: needs follow-through quickly or theta + noise take it.
+- Rule: after ~11:00 on a trend day, require a pullback toward VWAP / 9-EMA (not a flag at HOD) and
+  prefer delta ≥ 0.30. Being up on the day, don't hand it back on marginal setups.
+
 ## 2026-11-09 — IWM 281C re-entry: +$8.91 (0.27 → 0.36)
 - What worked: re-entering a clean trend after a stop-out; stop on the underlying (IWM swing low)
   held through a 279.755 wick that a premium-based stop would have hit; disaster stop moved up only
