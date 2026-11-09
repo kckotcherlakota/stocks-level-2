@@ -1,5 +1,10 @@
 # LESSONS (newest first)
 
+## 2026-11-09 ~15:00 — iron condor test: REJECTED (same multi-leg block)
+- Test SPY 745/746P–760/761C condor (non-fillable 0.90 credit) → "multi-leg strategy cannot be sent for
+  approval yet — NOT placed". Approval setting read false (updated 14:40 ET). Agent multi-leg is
+  blocked platform-side regardless of the setting. Don't retest unless the user says Robinhood changed it.
+
 ## 2026-11-09 EOD — day -$9.54 (1W / 4L) on a +2.4% SPY trend day
 - Best edge today was the open → 10:45 trend. 4 of 5 trades were after 10:59 and lost a combined -$17.36.
 - Afternoon 0DTE (SPY 754C @ 13:50, 2h10m to expiry): theta ≈ entire premium over remaining time; 3 min of
