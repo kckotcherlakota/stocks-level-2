@@ -1,5 +1,14 @@
 # LESSONS (newest first)
 
+## 2026-11-09 EOD — day -$9.54 (1W / 4L) on a +2.4% SPY trend day
+- Best edge today was the open → 10:45 trend. 4 of 5 trades were after 10:59 and lost a combined -$17.36.
+- Afternoon 0DTE (SPY 754C @ 13:50, 2h10m to expiry): theta ≈ entire premium over remaining time; 3 min of
+  sideways cost $10. Afternoon entries need immediate momentum; exit within 2–3 min if no follow-through.
+- Process wins: every loss was capped and planned; cash floor never at risk; stopped when remaining
+  daily room < one normal stop.
+- Next day focus: 9:40–11:00 window, underlying-based stops, take +30–50% at the bid, max 1–2 trades
+  after 11:00 and only A+ (VWAP pullback-hold).
+
 ## 2026-11-09 — midday HOD breakout (IWM 282C): -$2.09; day back to ≈ flat
 - 2 of my 4 trades today were "buy at HOD" after 11:00 on a 2.5-hour-old trend; both failed (-$8.27).
   The one clean win (+$8.91) was earlier, at 10:44, re-entering a fresh trend.

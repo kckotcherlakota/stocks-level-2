@@ -27,7 +27,7 @@
 | Max deployed at once | the whole bankroll (≤ $80), but see per-trade limit |
 | Max per single trade (premium paid) | **$40**; at most 2 positions open at once |
 | Hard stop per trade | -35% of premium, or thesis invalid, whichever comes first |
-| Max daily loss | **-$15** from the day's start → stop trading for the day (capital first) |
+| Max daily loss | **-$15** from the day's start → stop trading for the day (capital first). Also stop when remaining room < one normal stop (~$10) |
 | Daily profit lock | No profit cap. Once day P&L ≥ +$20, never let it fall below 50% of the day's peak (stop for the day if it does) |
 | Max trades/day | 100 (user 11/09: squeeze every opportunity) — but every trade must still pass the setup checklist; no revenge or boredom trades |
 | After 3 winning trades in a day (user 11/09) | "Careful mode": A+ setups only (all 4 checklist items), size ≤ half of normal (≤ ~$25), profit-lock tightens to 70% of the day's peak, and stop for the day after the first loss in careful mode |
