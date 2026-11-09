@@ -56,6 +56,12 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   by Robinhood (see LESSONS 11/09). User decision 11/09: no spreads — buy single calls/puts only, still ≤ $40 each.
   Prefer IWM (cheaper strikes, ~0.30 delta for ≤$0.40) over far-OTM SPY/QQQ.
 
+## Time-of-day rule (11/09)
+- 9:40–11:00: trend entries OK (breakouts, flags, re-entries).
+- 11:00–13:30 (midday): no buying at HOD/LOD. Only VWAP pullback-and-hold or VWAP-loss setups.
+  Scan every 10 min. Exit any position that stalls 8–10 min.
+- 13:30–15:00: afternoon trend resumption allowed again. No new entries after 15:00.
+
 ## Setup checklist (need 3 of 4 before entry)
 1. Trend: price vs VWAP + 9/21 EMA on 5m in the same direction.
 2. Level: break-and-retest of premarket high/low, prior-day H/L, or opening range (first 15m).

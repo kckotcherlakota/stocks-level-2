@@ -1,5 +1,12 @@
 # LESSONS (newest first)
 
+## 2026-11-09 — midday HOD breakout (IWM 282C): -$2.09; day back to ≈ flat
+- 2 of my 4 trades today were "buy at HOD" after 11:00 on a 2.5-hour-old trend; both failed (-$8.27).
+  The one clean win (+$8.91) was earlier, at 10:44, re-entering a fresh trend.
+- Rule: from 11:00–13:30, NO buying at HOD (flags/breakouts). Only (a) pullback to VWAP that holds, or
+  (b) VWAP loss for puts. Scan every 10 min in that window, not 5.
+- Exiting a stall early (−$2 instead of −$5 at the stop) was right.
+
 ## 2026-11-09 — IWM 282C x2 flag at HOD: -$6.18
 - Trend was 2.5 h old and SPY/QQQ were extended (+2.2% / +3.4%); the "flag" at 11:04 broke after
   one small push. Late-morning (11:00–14:00) flags on an extended trend fail more often.
