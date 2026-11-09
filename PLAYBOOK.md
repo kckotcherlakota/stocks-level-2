@@ -10,13 +10,15 @@
 - Bankroll = $80 + cumulative realized P&L **from the agent's own trades only** (tracked in `STATE.md`).
   Deposits, interest, dividends, or any other money arriving in the account is the user's,
   never the agent's, even if it lands in this account.
-- **Cash floor:** account cash must never go below **$124.29** ($204.29 starting cash − $80).
+- **Cash floor:** account cash must never go below **$204.29**. (Was $124.29; on 11/09 AM cash
+  rose $204.29 → $284.29, an $80 arrival not from agent trades. Floor raised to cash − $80 so the
+  agent can never touch more than $80. Adjust the floor if the user moves money in/out.)
   Check this before every order; if an order could break the floor, don't place it.
 - If the bankroll falls to $40, stop trading and ask the user before continuing.
 - **Needing more than $80 requires the user's explicit approval** (user instruction 2026-11-09).
   Ask in the session or by email, and wait for a yes before using any money beyond the bankroll.
   Profits stay in the bankroll, so it can grow above $80 without asking (confirmed by user 2026-11-09).
-  The cash floor stays fixed at $124.29: profits add to cash and bankroll equally, so the
+  The cash floor stays fixed at $204.29: profits add to cash and bankroll equally, so the
   user's reserved money is never touched.
 
 ## Risk limits (non-negotiable)
