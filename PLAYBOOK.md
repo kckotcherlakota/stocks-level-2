@@ -38,6 +38,10 @@ User goal: $1,000/week. With $80 of capital that is 1,250%/week — not achievab
 risk of ruin, which violates "capital is highly protected". Working target: grow the account
 steadily (+5–10%/week) and scale size only as the account grows. Size rule: risk ≤ 15% of account per trade.
 
+## No pressure to force trades
+- "No trade" is a valid, good day. Never take a weak setup just to show a daily profit.
+- Report losing days honestly and promptly; never hide or soften a loss.
+
 ## What to trade
 - Liquid underlyings only: SPY, QQQ (daily 0DTE expirations), IWM. Single names only if the
   bid-ask spread is ≤ 5% of mid and a catalyst is present.
