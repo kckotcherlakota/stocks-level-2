@@ -86,6 +86,9 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Limit orders at mid (or mid + 0.01). If not filled in ~60s, re-evaluate — don't chase > 2 ticks.
 - Decide the exit BEFORE entry: take profit at +30–50%, hard stop at -35%.
 - On a stop, exit at the bid — do not "wait for it to come back".
+- Trailing the broker stop: only after +20%, keep it ≥ 12–15% of the bid below the bid (≥ 0.08 on $0.30–0.50
+  options, ≥ 0.12 on $0.80+ options). Taking profit: sell at bid − 0.01 for an immediate fill.
+- Every scan: check get_option_orders for orders NOT placed by this session (another agent traded 11/10).
 
 ## Daily routine
 1. Pre-market (9:00–9:30 ET): read memory files, account, positions, news, economic calendar,
