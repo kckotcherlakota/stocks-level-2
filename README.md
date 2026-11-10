@@ -1,5 +1,7 @@
 # stocks-level-2 — 0DTE options trading memory
 
+**Commands:** user says **"hi"** → load context (see `CLAUDE.md`). User says **"roll up"** → save everything to the repo, commit + push, confirm it's safe to clear the chat.
+
 This repo is the **persistent memory** for the Claude trading agent. Sessions are wiped daily;
 everything learned must live here. **At the start of every session, read in this order:**
 
