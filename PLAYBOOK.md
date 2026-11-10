@@ -21,17 +21,22 @@
   The cash floor stays fixed at $204.29: profits add to cash and bankroll equally, so the
   user's reserved money is never touched.
 
+## Budget update (user, 2026-11-10 ~11:15 ET)
+- Agent budget raised to **$300** ("more money = more responsibility: make more profit AND protect capital more carefully").
+- At the time: account cash $303.48 → **new cash floor = $3.48** (cash − $300). Profits from agent trades add to the budget.
+- Scaled risk limits (below) are % of a $300 budget; size up only as written.
+
 ## Risk limits (non-negotiable)
 | Rule | Limit |
 |---|---|
 | Max deployed at once | the whole bankroll (≤ $80), but see per-trade limit |
-| Max per single trade (premium paid) | **$40**; at most 2 positions open at once |
-| Hard stop per trade | -35% of premium, or thesis invalid, whichever comes first |
-| Max daily loss | **-$15** from the day's start → stop trading for the day (capital first). Also stop when remaining room < one normal stop (~$10) |
+| Max per single trade (premium paid) | **$75** (25% of $300); at most 2 positions open at once |
+| Max LOSS per trade | **$15** (5% of budget) — set underlying stop + broker disaster stop so the worst case ≤ $15 |
+| Max daily loss | **-$30** (10% of budget) from the day's start → stop for the day. Also stop when remaining room < one normal stop (~$15) |
 | Daily profit lock | No profit cap. Once day P&L ≥ +$20, never let it fall below 50% of the day's peak (stop for the day if it does) |
 | Max trades/day | 100 (user 11/09: squeeze every opportunity) — but every trade must still pass the setup checklist; no revenge or boredom trades |
 | After 3 winning trades in a day (user 11/09) | "Careful mode": A+ setups only (all 4 checklist items), size ≤ half of normal (≤ ~$25), profit-lock tightens to 70% of the day's peak, and stop for the day after the first loss in careful mode |
-| Weekly drawdown kill switch | -$30 for the week → stop until next Monday, review |
+| Weekly drawdown kill switch | -$60 for the week (20%) → stop until next Monday, review |
 | No new 0DTE entries after | 3:00 PM ET; flat on all 0DTE by 3:45 PM ET |
 | No entries | first 10 min after open (9:30–9:40) unless a clear gap setup; not in the minute of FOMC/CPI |
 | Never | market orders on options, naked short options, averaging down, holding 0DTE into the close |
