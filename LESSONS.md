@@ -1,5 +1,13 @@
 # LESSONS (newest first)
 
+## 2026-11-10 — IWM 282C gap-fill: +$22.91 (0.30 → 0.53) — the playbook working
+- Waited through a failed QQQ-only breakout (9:45) for all 3 indexes to clear the 10-min opening range
+  (9:57). Index agreement filter saved a whipsaw.
+- CPI-day IV made near-ATM unaffordable; 1 strike further OTM (delta 0.23) still worked because the move
+  came fast in the first hour.
+- Trailed broker stop only as bid rose (0.19→0.29→0.34, always ≥0.08 under bid); sold AT THE BID as soon as
+  it neared target → filled better than limit (0.53). 4 minutes in the trade.
+
 ## 2026-11-09 ~15:00 — iron condor test: REJECTED (same multi-leg block)
 - Test SPY 745/746P–760/761C condor (non-fillable 0.90 credit) → "multi-leg strategy cannot be sent for
   approval yet — NOT placed". Approval setting read false (updated 14:40 ET). Agent multi-leg is
