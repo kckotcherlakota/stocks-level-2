@@ -1,5 +1,11 @@
 # LESSONS (newest first)
 
+## 2026-11-10 — IWM 278P: +$12.91 — VWAP-loss put after gap-fill rejection
+- Skipped the first VWAP dip (10:28, whipsawed back in 1 min); took the second one only after a clear
+  lower-high/lower-low sequence (10:40). Patience on the first touch avoided a loss.
+- Exit friction again: a limit AT the bid can miss when the 0DTE quote ticks down. When taking profit,
+  sell at bid − 0.01 so it fills immediately (cost: $1; benefit: no unprotected minutes).
+
 ## 2026-11-10 — IWM 282C gap-fill: +$22.91 (0.30 → 0.53) — the playbook working
 - Waited through a failed QQQ-only breakout (9:45) for all 3 indexes to clear the 10-min opening range
   (9:57). Index agreement filter saved a whipsaw.
