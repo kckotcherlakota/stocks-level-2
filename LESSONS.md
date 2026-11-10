@@ -1,5 +1,10 @@
 # LESSONS (newest first)
 
+## 2026-11-10 — SPY 745P: +$3.91 (could have been +$13): trailing stop too tight for a $0.80 option
+- Fixed "8¢ under the bid" works for $0.30–0.50 options but a $0.80 option swings ±10¢ on noise.
+  Trail by ~12–15% of the bid (≥ 0.10–0.12 for $0.80 options), or trail only after +30%.
+- Still positive: the stop turned a +$13 open gain into +$4 instead of a loss.
+
 ## 2026-11-10 — IWM 278P: +$12.91 — VWAP-loss put after gap-fill rejection
 - Skipped the first VWAP dip (10:28, whipsawed back in 1 min); took the second one only after a clear
   lower-high/lower-low sequence (10:40). Patience on the first touch avoided a loss.
