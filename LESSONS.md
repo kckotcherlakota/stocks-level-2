@@ -1,5 +1,12 @@
 # LESSONS (newest first)
 
+## 2026-11-11 — SPY 759C: +$26.91 (0.64 → 0.91 in 7 min) — patience through chop, then the first clean break
+- 75 minutes of VWAP chop with SPY/QQQ vs IWM divergence: 9 scans, no trade, no loss. The all-3 filter kept me out.
+- Entry 10:53: SPY broke its OR high, QQQ at HOD, IWM above VWAP and rising (not at its OR high). Delta 0.36, $64.
+- %-based trailing stop (≈15% under the bid: 0.50 → 0.55 → 0.68 → 0.70 → 0.76) survived a 0.80 → 0.72 dip that a fixed
+  8¢ trail might also have survived, but kept the lock tighter as it rose. Exit at bid − 0.01 filled 0.91 (a penny better).
+- Midday breakouts (12:28 all-3 HOD, 13:21 SPY/QQQ) both stalled within minutes — the no-chase midday rule held up again.
+
 ## 2026-11-10 — SPY 745P: +$3.91 (could have been +$13): trailing stop too tight for a $0.80 option
 - Fixed "8¢ under the bid" works for $0.30–0.50 options but a $0.80 option swings ±10¢ on noise.
   Trail by ~12–15% of the bid (≥ 0.10–0.12 for $0.80 options), or trail only after +30%.
