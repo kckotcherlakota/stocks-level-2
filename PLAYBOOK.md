@@ -32,6 +32,10 @@
   ~$0.35 option, or 1 of ~$0.70), and allow up to 2 positions at once. Risk limits do NOT change: max loss $15/trade
   (set the stop so qty × (entry − stop) ≤ $15), -$30/day, -$60/week, careful mode after 3 wins, profit lock.
 - Bigger size never means weaker setups or wider stops. Take profits fast (+30–50%, sell at bid − 0.01).
+- **Premium cap raised to $150/trade for A+ setups only** (user, 11/11 ~12:25 ET: "if you're sure, you can double to $150").
+  A+ = all 4 checklist items AND all 3 indexes (SPY/QQQ/IWM) agree, in the 9:40–11:00 or 13:30–15:00 window.
+  Max loss per trade stays $15 (so a $150 position needs a stop ≤ 10% away — only when an underlying level allows it).
+  Not used in careful mode (half size there). Other setups: ≤ $75.
 
 ## Risk limits (non-negotiable)
 | Rule | Limit |
