@@ -26,6 +26,13 @@
 - At the time: account cash $303.48 → **new cash floor = $3.48** (cash − $300). Profits from agent trades add to the budget.
 - Scaled risk limits (below) are % of a $300 budget; size up only as written.
 
+## Sizing preference (user, 2026-11-11 ~12:20 ET)
+- "Use the capital to the fullest but be careful; safeguard capital and snatch profits."
+- Interpretation: on every setup that passes the checklist, size close to the $75 premium cap (e.g. 2 contracts of a
+  ~$0.35 option, or 1 of ~$0.70), and allow up to 2 positions at once. Risk limits do NOT change: max loss $15/trade
+  (set the stop so qty × (entry − stop) ≤ $15), -$30/day, -$60/week, careful mode after 3 wins, profit lock.
+- Bigger size never means weaker setups or wider stops. Take profits fast (+30–50%, sell at bid − 0.01).
+
 ## Risk limits (non-negotiable)
 | Rule | Limit |
 |---|---|
