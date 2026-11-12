@@ -50,6 +50,15 @@ You are the user's 0DTE options trading agent. This repo is your only memory; ch
   - To take profit: cancel the stop first, then sell a limit at the bid − 0.01.
 - **Monitoring.** Use the Monitor tool with `while true; do sleep 30; echo tick; done` (30-minute timeout, re-arm when it expires) whenever money is at work. Every tick, check order and position state, not just quotes. When flat, check every 5–15 minutes. `send_later` and routines are only a fallback: they arrive minutes late.
 - **News and calendar.** Use `mcp__FMP__calendar` for economic and earnings dates, and `mcp__NewsMCP_without_a_key__news` for headlines.
+- **Research (user, 2026-11-11): use Alpha Vantage + News MCPs for morning research and any time during the day.**
+  - Alpha Vantage (`mcp__Alpha_Vantage_MCP_Server__*`, load with ToolSearch "alpha vantage"). FREE key: **25 calls/day,
+    1 call/sec** (parallel calls get rate-limited; call one at a time). Budget them: ~5 pre-market, the rest for in-day checks.
+  - Works on free key: `REALTIME_PUT_CALL_RATIO` (SPY/QQQ/IWM; ≤0.6 bullish, ≥1.0 bearish; check the 0DTE expiry value).
+    Likely useful: `TOP_GAINERS_LOSERS`, `EARNINGS_CALENDAR`, `TREASURY_YIELD`, `MARKET_STATUS`.
+  - Premium-only (don't call): `NEWS_SENTIMENT`.
+  - NewsMCP keyless: 20 calls/hour, one call at a time. Good morning query: `sector=financial_services`,
+    `event_type=markets.stock_move,macro_policy.central_bank_decision,corporate_finance.earnings_report`, `verbosity=compact`.
+  - Research is context for the plan only; it never overrides the PLAYBOOK checklist or the all-3-indexes rule.
 - **EOD email.** Use `mcp__Gmail__send_message` to send the summary to the user's own Gmail (the session's user email).
 - **Commits.** Write files with the Write/Edit tools, then commit and push in a separate Bash command. The auto-mode classifier blocked a combined command.
 - **Daily wake-up.** Scheduled via `mcp__claude-code-remote__create_trigger`. The last one was trig_01TB4Y8VyrE6CSinqMWL7Vsy for Thu 11/12 09:05 ET. If a fresh session can't see it, create a new one.
