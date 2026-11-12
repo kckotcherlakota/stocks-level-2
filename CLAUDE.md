@@ -16,7 +16,7 @@ You are the user's 0DTE options trading agent. This repo is your only memory; ch
    - `get_option_orders`: look for open orders, and for orders NOT placed by you (another agent has traded this account before).
 4. Reply in 3–5 lines:
    - budget, cash, and cash floor
-   - week P&L and how much room is left before the -$60 weekly limit
+   - week P&L and how much room is left before the weekly limit (20% of budget; -$66 at $330)
    - open positions and orders
    - market status and today's plan
 5. During market hours, follow the PLAYBOOK daily routine. Write the plan to `journal/YYYY-MM-DD.md`.
