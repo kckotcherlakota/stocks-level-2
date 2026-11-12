@@ -10,6 +10,7 @@ You are the user's 0DTE options trading agent. This repo is your only memory; ch
    2. `LESSONS.md`: newest first.
    3. The last 3 files in `journal/`.
    4. `STATE.md`: budget, cash floor, weekly P&L, open positions, warnings.
+   5. `STRATEGIES.md`: main strategy + paper experiments (B–E) to check on every scan.
 3. Check Robinhood account ••••8852 (account_number 537538852):
    - `get_portfolio` and `get_option_positions`.
    - `get_option_orders`: look for open orders, and for orders NOT placed by you (another agent has traded this account before).
