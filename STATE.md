@@ -5,6 +5,7 @@
 - **Cash floor (never go below): $3.48** (cash $303.48 − $300 at 11:15 ET 11/10)
 - **Sizing:** Mak1 limits on its $267.73 (above). Combined agent stop stays −10%/day of $317.73 (−$31.77) and −20%/week.
 - **Live strategies: Mak1 = core builder, budget $267.73** (5%/10%/20% → $13.39 loss/trade, −$26.77/day, −$53.55/week; premium ≤ $67, A+ ≤ $120).
+  **A+ Conviction tier (user-approved 11/12):** max loss ≈ $20/trade (7.5%), premium ≤ $120, scale-out; needs technicals + news (PLAYBOOK).
   **Mak2 = $50 sub-budget** (≤$40 premium, ≤$10 loss/trade, −$15/day; CSCO 11/13 first; pause at $25). Total agent budget $317.73. B, C, D, E, A2 = paper only (STRATEGIES.md). Mak1 first until the day is green (user 11/12).
 - Open positions: none. Open orders: none. Account cash $321.21 (EOD 11/12).
 - Week of 2026-11-09 agent P&L: **+$44.01** (Mon −$9.54; Tue +$39.73; Wed +$26.91; Thu −$13.09). Other agent: −$7.09 (Tue).

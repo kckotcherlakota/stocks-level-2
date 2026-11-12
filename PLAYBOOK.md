@@ -162,3 +162,13 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   and weekly stops, half-size first trade, chop filter, and "no forced trades" all still apply. Track progress toward $150 in STATE.
 - Honest math: best day so far +$39.73; recent average ≈ +$11/day. Hitting $150 needs ~3 good Mak1 days/week at full allowed
   size on A/A+ setups plus Mak2 contributions. Report weekly progress honestly; never chase it with extra risk.
+
+## High-conviction tier (user approval, 2026-11-12 evening)
+- User: "I am okay taking a reasonable risk with a valid strategy... with solid backing on technicals and news you are approved
+  to take risk to reach our goal." This is the explicit OK the Scaling plan required to raise per-trade risk — for this tier only.
+- **A+ Conviction** = ALL of: checklist 4/4; SPY/QQQ/IWM all agree; chop filter passes; quote gate passes; in the 9:40–11:00 or
+  13:30–15:00 window; AND a news/macro reason supporting the direction (checked via NewsMCP/Alpha Vantage, written in the journal).
+- Sizing for A+ Conviction (Mak1): max loss per trade **7.5% of Mak1 budget** (≈ $20 at $267.73, vs 5% normally); premium up to the
+  A+ cap (45%, ≈ $120); use the 2-contract scale-out. Allowed at full size even as the first trade of the day.
+- Unchanged: combined daily stop −10% of total budget; weekly stop −20%; stop after 2 losses; never let a green day turn red;
+  exit when the 3-index agreement breaks (LESSONS 11/12); everything else in this playbook. Non-conviction setups keep normal sizing.
