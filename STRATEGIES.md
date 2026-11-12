@@ -18,6 +18,12 @@ with positive total P&L and win rate ≥ 50%, and only with the user's OK.
 | D | **1DTE afternoon** | Same setups as A but after 13:30, using the next-day expiry (less theta) | 1DTE, delta ~0.40 | +25–35% same day; stop -25%; never hold overnight unless user approves |
 | E | **Single-stock catalyst** | Day after earnings in a liquid name (e.g., CSCO 11/13); opening-range break with spread ≤ 5% of mid | Weekly call/put, delta ~0.40 | +30–50%; stop: back inside OR |
 
+## Paper bankroll (user 11/11): **$100** shared by B, C, D, E, A2 — virtual money only, never touches the live account
+- Per paper trade: premium ≤ $50, max loss ≤ $10 (stop set so qty × (entry − stop) ≤ $10), qty from the sizing formula below.
+- Paper daily stop: -$20 across all experiments. At most 2 paper positions open at once.
+- If no contract fits these limits, log the signal as "too expensive" (still useful data).
+- Paper bankroll compounds: running balance = $100 + all paper P&L. Track per strategy in the scoreboard.
+
 ## Research spec (user's doc, 11/11: docs/validated_intraday_options_playbook_v1.txt — "paper-trading research only")
 Fixed definitions for all paper experiments (log every gate + rejection reason):
 - Signals on **completed 5-min bars** only; session VWAP from 9:30; EMA(9)/EMA(20) on 5m closes ("rising" = > value 3 bars ago);
@@ -31,7 +37,7 @@ Fixed definitions for all paper experiments (log every gate + rejection reason):
 - Extra paper variant **A2 = 15m-ORB + EMA9>EMA20 + RVOL ≥ 1.5 + retest entry** (compare to live A's 10m OR).
 - SPY/QQQ divergence (SMT) and RSI(14) > 50 / < 50 are optional filters: log them, don't require them.
 
-## Scoreboard (paper)
+## Scoreboard (paper) — paper bankroll: **$100.00**
 | ID | Trades | Wins | Paper P&L | Status |
 |---|---|---|---|---|
 | B | 0 | 0 | $0 | paper |
