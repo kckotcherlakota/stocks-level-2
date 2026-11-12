@@ -48,7 +48,7 @@ You are the user's 0DTE options trading agent. This repo is your only memory; ch
   - Only single-leg orders work. Multi-leg orders (spreads, condors) are rejected by the platform; don't retry unless the user says this changed.
   - Entries are limit orders at mid. After every fill, place a broker `stop_market` sell-to-close as a disaster stop.
   - To take profit: cancel the stop first, then sell a limit at the bid − 0.01.
-- **Monitoring.** Use the Monitor tool with `while true; do sleep 30; echo tick; done` (30-minute timeout, re-arm when it expires) whenever money is at work. Every tick, check order and position state, not just quotes. When flat, check every 5–15 minutes. `send_later` and routines are only a fallback: they arrive minutes late.
+- **Monitoring.** Use the Monitor tool with `while true; do sleep 30; echo tick; done` (30-minute timeout, re-arm when it expires) whenever money is at work. Every tick, check order and position state, not just quotes. When flat, scan every **2 minutes** (user, 11/12): `while true; do sleep 120; echo tick; done`. `send_later` and routines are only a fallback: they arrive minutes late.
 - **News and calendar.** Use `mcp__FMP__calendar` for economic and earnings dates, and `mcp__NewsMCP_without_a_key__news` for headlines.
 - **Research (user, 2026-11-11): use Alpha Vantage + News MCPs for morning research and any time during the day.**
   - Alpha Vantage (`mcp__Alpha_Vantage_MCP_Server__*`, load with ToolSearch "alpha vantage"). FREE key: **25 calls/day,
