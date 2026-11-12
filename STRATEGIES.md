@@ -4,7 +4,7 @@ User: "We should parallel try other strategies while this [main] remains our mai
 
 ## Main (live) — **Mak1** (user's name, 11/11): the ONLY live strategy and it has the COMPLETE budget
 **Mak1 (A). Index-agreement 0DTE** — SPY/QQQ/IWM all agree; opening-range break or VWAP loss/hold; 9:40–11:00 and 13:30–15:00.
-Rules in PLAYBOOK. Record: 11/09 -9.54, 11/10 +39.73, 11/11 +26.91.
+Rules in PLAYBOOK. Record: 11/09 -9.54, 11/10 +39.73, 11/11 +26.91, 11/12 -13.09.
 
 ## Experiments (PAPER ONLY, zero money — user 11/11: "keep testing these")
 **Priority (user 11/12):** keep the paper experiments running and logged every scan, but **Mak1 comes first until the day
@@ -50,3 +50,4 @@ Fixed definitions for all paper experiments (log every gate + rejection reason):
 
 Notes from past days (hindsight, not counted): 11/10 the 9:57 gap-fill call was effectively strategy B's mirror (fill up) and won;
 11/11 had no clean midday VWAP touch (C would have had no trade).
+11/12: no paper trades logged (process miss). Hindsight: B (gap ≥0.7% down, held VWAP after 9:45) would likely have hit the prior-close target by 10:58; C no trigger (SPY/QQQ never touched VWAP 11:00–13:30).
