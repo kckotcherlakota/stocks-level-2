@@ -7,6 +7,9 @@ User: "We should parallel try other strategies while this [main] remains our mai
 Rules in PLAYBOOK. Record: 11/09 -9.54, 11/10 +39.73, 11/11 +26.91, 11/12 -13.09.
 
 
+**Priority (user 11/12): Mak1 is the PRIMARY money maker.** Mak1 setups always come first (attention, budget, monitoring);
+Mak2 is secondary and must never take budget or attention from a live Mak1 setup or position.
+
 ## Mak2 (LIVE, small slice — user 11/12 ~15:05 ET: "Let's try new strategies mak2 with csco"; chose "Small live slice")
 **Single-stock post-earnings opening-range break.** First instance: CSCO on Fri 11/13 (CSCO reports 11/12 after close).
 - Budget slice: up to **$40 premium/trade, max loss $10/trade, −$15/day Mak2 stop**, carved out of the agent budget
