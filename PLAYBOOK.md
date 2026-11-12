@@ -37,6 +37,19 @@
   Max loss per trade stays $15 (so a $150 position needs a stop ≤ 10% away — only when an underlying level allows it).
   Not used in careful mode (half size there). Other setups: ≤ $75.
 
+## Scaling plan for the main strategy (user, 2026-11-11 evening: "scale the current working one, bring up others in parallel")
+- **Limits scale with the budget automatically** (% of current budget, recomputed each morning from STATE):
+  max loss/trade 5%, daily stop -10%, weekly stop -20%, normal premium cap 25%, A+ premium cap 45%.
+  At $330.82: $16.50 / -$33 / -$66 / $82 / $150.
+- **2-contract scale-out on A setups** when 2 contracts fit the premium cap: sell 1 at +30%, move the stop on the
+  other to breakeven, trail it ~15% under the bid. Same total risk, more of the move captured.
+- **Up to 2 positions at once** (e.g., SPY + IWM when all 3 agree), combined open risk ≤ the daily stop's remaining room.
+- **Step-up review every Friday:** if the week is positive and the max drawdown stayed < 10%, keep the % rules (size grows
+  with the budget). If the week is negative, cut sizes by half for the next week.
+- Raising the 5% per-trade risk needs the user's explicit OK.
+- **Parallel strategies:** see STRATEGIES.md. Paper first; a strategy that passes (≥10 paper trades, positive, ≥50% wins)
+  gets its own live slice of $75 with its own -$15/day stop, after the user's OK.
+
 ## Risk limits (non-negotiable)
 | Rule | Limit |
 |---|---|
