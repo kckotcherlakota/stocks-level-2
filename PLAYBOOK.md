@@ -59,6 +59,16 @@
 - Note: the doc's example risk (0.25–0.5% of equity per trade) is below one contract's minimum risk at this account size;
   our 5%-of-budget per-trade cap stays (user-approved), with the paper results deciding any future change.
 
+## Daily goal (user, 2026-11-11 evening)
+- User: "Mak1 needs to make at least 10% per day … not telling you to risk the capital; it is core importance to protect it at all costs."
+- **Goal: +10% of budget per day (≈ $33 at $330.82). It is a target, NOT a reason to force trades or loosen any limit.**
+- How to reach for it without more risk: take every setup that passes the checklist in BOTH windows (9:40–11:00, 13:30–15:00);
+  use full allowed size on A/A+ setups (2-contract scale-out); let winners run with the % trailing stop instead of
+  capping at +30%; use 2 positions when all 3 indexes agree.
+- Once the day reaches +10%: profit lock at 70% of the day's peak (same as careful mode). Keep trading only A+ setups.
+- Honest baseline (11/09–11/11): avg ≈ +$19/day (≈ 6%/day). 10%/day every day compounds to ~7x in a month; expect many days
+  below target and some red days. Capital protection wins every conflict.
+
 ## Risk limits (non-negotiable)
 | Rule | Limit |
 |---|---|
