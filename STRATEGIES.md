@@ -7,6 +7,8 @@ User: "We should parallel try other strategies while this [main] remains our mai
 Rules in PLAYBOOK. Record: 11/09 -9.54, 11/10 +39.73, 11/11 +26.91.
 
 ## Experiments (PAPER ONLY, zero money — user 11/11: "keep testing these")
+**Priority (user 11/12):** keep the paper experiments running and logged every scan, but **Mak1 comes first until the day
+has logged a profit**. If a Mak1 setup and a paper signal compete for attention, handle Mak1 first; log paper afterwards.
 Each scan, check these too. When one triggers, log a paper trade in the journal's "Paper trades" table using real
 option quotes: entry = ask, exit = bid, same stop/target rules as live. A strategy goes live only after ≥ 10 paper trades
 with positive total P&L and win rate ≥ 50%, and only with the user's OK.
