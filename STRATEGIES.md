@@ -12,8 +12,10 @@ Mak2 is secondary and must never take budget or attention from a live Mak1 setup
 
 ## Mak2 (LIVE, small slice — user 11/12 ~15:05 ET: "Let's try new strategies mak2 with csco"; chose "Small live slice")
 **Single-stock post-earnings opening-range break.** First instance: CSCO on Fri 11/13 (CSCO reports 11/12 after close).
-- Budget slice: up to **$40 premium/trade, max loss $10/trade, −$15/day Mak2 stop**, carved out of the agent budget
-  (Mak1 keeps the rest). Mak2 losses/profits count toward the same daily/weekly agent limits.
+- **Mak2 budget: $50** (user 11/12: "allocate some budget for mak2 but core builder is mak1"), carved from the $317.73 agent budget.
+  Mak2's own P&L adds to / subtracts from its $50. If it falls to $25, pause Mak2 and ask the user.
+  Per trade: up to **$40 premium, max loss $10; −$15/day Mak2 stop**.
+- **Mak1 budget: the rest ($267.73)** — Mak1's %-limits are computed on its own budget (5% = $13.39 loss/trade, 10% = −$26.77/day). Mak2 losses/profits count toward the same daily/weekly agent limits.
 - Never hold through the earnings print; enter only after the reaction.
 - Setup (after 9:45 ET): 15-min opening range (9:30–9:45) frozen. Trade in the gap direction only: gap up → call on a 5-min close above
   the OR high that holds (no immediate reclaim); gap down → put on a 5-min close below the OR low. Skip if the gap is < 2% or the

@@ -153,3 +153,5 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - User approved a small live slice for Mak2 (single-stock post-earnings OR break; first: CSCO 11/13). Limits: ≤ $40 premium,
   ≤ $10 loss/trade, −$15/day for Mak2, max 2 Mak2 trades/day, stop after 1 Mak2 loss. Counts toward the agent daily/weekly stops.
   Spread ≤ 5% of mid. Rules in STRATEGIES.md "Mak2".
+- Budget split (user 11/12): Mak2 gets a fixed **$50** sub-budget; Mak1 (core builder) gets the rest and computes its %-limits on
+  its own budget. Each strategy's P&L changes only its own budget. Combined daily/weekly stops apply to the total.
