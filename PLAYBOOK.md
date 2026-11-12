@@ -155,3 +155,10 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   Spread ≤ 5% of mid. Rules in STRATEGIES.md "Mak2".
 - Budget split (user 11/12): Mak2 gets a fixed **$50** sub-budget; Mak1 (core builder) gets the rest and computes its %-limits on
   its own budget. Each strategy's P&L changes only its own budget. Combined daily/weekly stops apply to the total.
+
+## Weekly target (user, 2026-11-12 evening)
+- User: "Weekly returns should be greater than $150 at least."
+- Recorded as the weekly TARGET (≈ 47% of the $317.73 budget; ≈ $30/day). It does NOT change any risk limit: per-trade, daily
+  and weekly stops, half-size first trade, chop filter, and "no forced trades" all still apply. Track progress toward $150 in STATE.
+- Honest math: best day so far +$39.73; recent average ≈ +$11/day. Hitting $150 needs ~3 good Mak1 days/week at full allowed
+  size on A/A+ setups plus Mak2 contributions. Report weekly progress honestly; never chase it with extra risk.

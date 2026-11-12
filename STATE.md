@@ -10,7 +10,7 @@
 - Week of 2026-11-09 agent P&L: **+$44.01** (Mon −$9.54; Tue +$39.73; Wed +$26.91; Thu −$13.09). Other agent: −$7.09 (Tue).
   Weekly kill switch −20% of budget (≈ −$64). Week is green going into Friday → normal rules Friday (first trade half size).
 - Friday step-up review due (PLAYBOOK): week positive, max drawdown < 10% → keep the % rules.
-- Goal: +10%/day as a target only; minimize red days (PLAYBOOK).
+- Goal: **weekly ≥ $150 (user 11/12)**, ≈ +10%/day — targets only; minimize red days (PLAYBOOK). This week: +$44.01 → $105.99 short with Friday left.
 - Paper bankroll for experiments: $100.00 (no paper trades logged yet — log them in real time from Fri).
 - Scans: every 2 min when flat (user 11/12); 30 s with money at work. New exit rule: if any of SPY/QQQ/IWM reclaims VWAP against a
   VWAP-loss trade, exit at bid − 0.01 (LESSONS 11/12).
