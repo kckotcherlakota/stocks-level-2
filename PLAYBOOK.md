@@ -69,6 +69,15 @@
 - Honest baseline (11/09–11/11): avg ≈ +$19/day (≈ 6%/day). 10%/day every day compounds to ~7x in a month; expect many days
   below target and some red days. Capital protection wins every conflict.
 
+## Minimize red days (user, 2026-11-11 evening: "we want to put red days to minimum")
+- **First trade of the day at half size** (1 contract, ≤ half the normal premium) until the day is green.
+- **Once the day is green, never let it turn red:** stop trading for the day if day P&L falls back to ≤ +$0 after
+  having been ≥ +$10. Risk on any new trade must fit inside the current day profit (house money only) once green.
+- **After the first loss of the day:** A+ setups only, half size. After a second loss: stop for the day.
+- **No trade beats a forced trade:** skip anything that is not 3/4 (A) or 4/4 (A+) on the checklist, chop filter passes,
+  quote gate passes.
+- Weekly: if the week is red going into Friday, Friday is A+ only at half size.
+
 ## Risk limits (non-negotiable)
 | Rule | Limit |
 |---|---|

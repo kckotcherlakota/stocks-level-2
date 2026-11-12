@@ -1,5 +1,9 @@
 # LESSONS (newest first)
 
+## 2026-11-11 (evening) — Process: goals vs. risk
+- A daily % goal is useful only as a direction for effort (more qualifying setups, both windows, better exits), never as a
+  reason to take B-grade trades or widen stops. Red-day minimization rules now enforce this (PLAYBOOK).
+
 ## 2026-11-11 — SPY 759C: +$26.91 (0.64 → 0.91 in 7 min) — patience through chop, then the first clean break
 - 75 minutes of VWAP chop with SPY/QQQ vs IWM divergence: 9 scans, no trade, no loss. The all-3 filter kept me out.
 - Entry 10:53: SPY broke its OR high, QQQ at HOD, IWM above VWAP and rising (not at its OR high). Delta 0.36, $64.
