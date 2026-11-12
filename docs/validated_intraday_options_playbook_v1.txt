@@ -1,0 +1,469 @@
+Version 1.0 | Review date: November 11, 2026 | Scope: long calls and
+puts; intraday U.S. equities / ETFs
+
+DECISION: APPROVE FOR PAPER-TRADING RESEARCH ONLY — NOT VALIDATED FOR
+LIVE AUTONOMOUS TRADING.
+
+Purpose. Convert the supplied price-action + session VWAP + 9/20 EMA +
+RSI + ATR + time-of-day RVOL + 15-minute opening range + optional
+SPY/QQQ SMT framework into measurable, auditable signals and execution
+controls. No profitability or “high probability” claim is established
+without out-of-sample, option-level testing.
+
+1 | Validation findings
+
+  -----------------------------------------------------------------------
+  Component               Assessment              Implementation
+                                                  instruction
+  ----------------------- ----------------------- -----------------------
+  Price action + VWAP     Reasonable              Anchor VWAP to regular
+                          trend/context pairing;  session; define
+                          VWAP is a lagging       close-based triggers;
+                          session benchmark.      do not trade VWAP
+                                                  touches alone.
+
+  9/20 EMA (5m)           Reasonable trend-state  Require aligned EMAs
+                          proxy; parameters are   and slope; avoid
+                          hypotheses.             repetitive crossovers
+                                                  in chop.
+
+  RSI 14                  Optional, partly        A/B test inclusion; do
+                          redundant with          not require
+                          trend/momentum.         overbought/oversold
+                                                  extremes for trend
+                                                  entries.
+
+  ATR 14 (5m)             Useful stop-distance    Set structural
+                          normalization, not      invalidation first;
+                          guaranteed loss         test ATR buffers and
+                          limiter.                resulting position
+                                                  risk.
+
+  RVOL 20 sessions        Appropriate concept; 20 Compare same elapsed
+                          sessions is a           regular-session minute
+                          small/noisy baseline.   or 5m bar; handle
+                                                  missing data and
+                                                  earnings regime.
+
+  15m opening range       Testable, but edge      Lock high/low only
+                          varies by asset and     after 9:45 ET; require
+                          regime.                 completed breakout
+                                                  candle.
+
+  SPY/QQQ SMT             Plausible hypothesis,   Compare synchronized
+                          not independently       equal-time swing
+                          validated edge.         pivots; use only when
+                                                  liquid ETF pairs are
+                                                  relevant.
+
+  1DTE contracts          Instrument choice, not  Model theta, IV,
+                          an independent setup.   spread, exercise and
+                                                  broker liquidation
+                                                  exposure.
+  -----------------------------------------------------------------------
+
+Evidence note. Academic and working-paper studies report promising ORB
+results for specific tests/universes; this does not establish that these
+exact 15-minute, ETF, earnings-stock, or options rules are profitable
+[1–2].
+
+2 | Canonical definitions (must be fixed before testing)
+
+-   Clock: all strategy windows use America/New_York; regular U.S. stock
+    session 9:30–16:00 ET on normal trading days. Holiday and
+    early-close calendars override defaults.
+
+-   Primary signal: completed 5-minute underlying bars, adjusted
+    consistently for splits/dividends where applicable. Intrabar
+    triggers are not counted as bar-close signals.
+
+-   VWAP: cumulative session price × volume / cumulative volume, reset
+    at 9:30 ET; document bar approximation (e.g., typical price) versus
+    trade-level calculation. Exclude premarket unless the specific
+    experiment says otherwise.
+
+-   EMAs: EMA(9) and EMA(20) on 5-minute underlying closes. Rising means
+    current EMA > EMA N completed bars ago (N initially 3; tune only in
+    training).
+
+-   ATR: 14 completed 5-minute true ranges (including previous-close gap
+    handling as defined in code). ATR stops are buffers or alternative
+    candidates; never move a stop farther away after entry without a
+    separate tested rule.
+
+-   RVOL at time t: cumulative regular-session volume through t divided
+    by median cumulative volume through the same t across the prior 20
+    eligible sessions. Median is a robust proposed choice; compare with
+    mean as an experiment. No future-session data.
+
+-   Opening range high/low: maximum/minimum underlying price in
+    9:30–9:45 ET, frozen at 9:45. Trigger bars begin after range
+    completion.
+
+-   SMT: bearish if one ETF exceeds a prior same-window confirmed swing
+    high while the other does not; bullish analogous lows. Fix swing
+    lookback (initially 3 bars each side) and confirmation delay. No
+    future pivot knowledge.
+
+-   R: initial planned dollar loss, calculated using executable option
+    entry estimate and conservative estimated liquidation value at
+    underlying invalidation, plus fees/slippage; cannot exceed maximum
+    premium at risk for a fully paid long option.
+
+3 | Market-regime classifier (priority order)
+
+1.  Pre-market information gate: confirm scheduled earnings, macro
+    releases, corporate actions, market halts and abnormal spreads.
+    Block trading if market data is stale or an event exclusion applies.
+
+2.  Trend candidate: price stays predominantly on one side of VWAP,
+    EMA(9) aligned with EMA(20), VWAP slope consistent, and no repeated
+    VWAP crossings in recent bars. Thresholds must be chosen using
+    training data.
+
+3.  Failed gap candidate: gap relative to previous regular-session
+    close, rejection of an opening level, and completed close back
+    through VWAP with lower high/higher low.
+
+4.  Choppy / uncertain: multiple VWAP crosses, overlapping bars,
+    conflicting direction or low liquidity; default NO TRADE.
+
+5.  Event momentum: confirmed earnings/news catalyst, unusual
+    time-of-day RVOL, and clean OR breakout; apply separate model
+    statistics from ETFs.
+
+Avoid circularity: do not use the future day’s full trend/range to label
+a regime at the time of entry.
+
+4 | Fully specified strategy entry templates
+
+A. Opening-range breakout / trend continuation
+
+-   Long call candidate: after 9:45, completed 5m close above OR high;
+    price > session VWAP; EMA9 > EMA20; positive VWAP slope; RVOL above
+    pre-registered cutoff (initial research grid: 1.2, 1.5, 2.0);
+    spread/liquidity pass.
+
+-   Entry: limit order on retest of OR high that holds, or first defined
+    continuation break; treat those as separate experiments. Invalidate
+    on underlying return below retest swing low / OR high with ATR
+    buffer, whichever predeclared rule is chosen.
+
+-   Long put: exact directional mirror. Suppress entry when the next
+    obvious target does not provide sufficient modeled reward relative
+    to premium risk.
+
+B. Gap fade / reversal
+
+-   Gap-up fade / put: completed rejection near OR high, close below
+    VWAP, confirmed lower high, then break below rejection candle low.
+    Stop reference above rejection swing high plus tested ATR buffer.
+    Targets: session VWAP only if not already crossed; otherwise logical
+    support and prior close.
+
+-   Gap-down fade / call: inverse. Require enough distance to target
+    after options execution costs; do not fade a gap merely because it
+    is large.
+
+C. Midday VWAP first pullback
+
+-   Time gate: 11:00–13:30 ET. Long call: established uptrend, EMA9 >
+    EMA20, rising VWAP, first qualifying return to VWAP, then 5m reclaim
+    close and break above trigger candle high. Swing-low / ATR-buffer
+    invalidation. Inverse for puts.
+
+-   Define “first”: zero prior completed VWAP contact events since the
+    initial directional impulse; freeze contact tolerance (e.g.,
+    fraction of ATR) before validation. More than 2 VWAP crosses in
+    prior 12 bars => NO TRADE (research starting threshold).
+
+D. Post-earnings ORB
+
+-   Treat earnings as a separate stock-level dataset. Only after first
+    15 minutes: closed breakout beyond OR, VWAP/EMA alignment, elevated
+    same-time RVOL, executable option market and no halt. Enter on
+    tested retest or continuation rule; reject excessively extended
+    price versus ATR.
+
+-   Never use SPY/QQQ SMT to claim confirmation of a single-stock
+    earnings reaction without separately proving cross-asset relevance.
+
+E. After 13:30 ET, 1DTE instrument overlay
+
+-   Not a signal. Apply only an already-qualified strategy. Define 1DTE
+    according to actual listed option expiration trading days, not
+    blindly calendar days; verify chain listing and exchange calendar.
+
+-   Approximate expected underlying move from implied volatility is NOT
+    option profit. Evaluate option payoff/mark-to-model at specific
+    underlying target, exit time and volatility scenarios; include
+    theta, vega, gamma and spreads. Reject unattractive payoff after
+    costs.
+
+5 | SMT and momentum: controlled experiments
+
+Baseline = price + VWAP + EMA + RVOL + setup-specific structural signal.
+Compare to baseline + RSI filter; baseline + SMT filter; baseline +
+both. SMT should not veto unrelated earnings names by default. Report
+paired differences by market regime and month, not just aggregate win
+rate.
+
+Initial RSI research proposal (not proven): for bullish trends,
+RSI(14) > 50 and rising; bearish RSI < 50 and falling. Record whether
+this reduces trade count more than it improves net expectancy.
+
+6 | Options contract selection and execution gates
+
+  -----------------------------------------------------------------------
+  Check                               Suggested research default; adjust
+                                      with evidence
+  ----------------------------------- -----------------------------------
+  Allowed positions                   Long calls or long puts only in
+                                      phase 1; one live position per
+                                      symbol; no naked short option legs.
+
+  Expiration                          Test 1DTE against 2–7DTE
+                                      separately. Expiration must have
+                                      tradable market at proposed exit
+                                      time.
+
+  Delta                               Test absolute delta 0.40–0.65
+                                      versus alternate bands; delta is
+                                      not a fixed probability of profit.
+
+  Quote quality                       Reject zero bid,
+                                      locked/crossed/stale market,
+                                      abnormal spread or low depth.
+                                      Example candidate threshold: spread
+                                      <= 10% of mid AND <= $0.15;
+                                      stress-test these.
+
+  Order type                          Marketable limit with defined
+                                      maximum debit; cancellation/reprice
+                                      with a cap. Do not assume mid-price
+                                      fills.
+
+  Sizing                              Quantity = floor(min(per-trade risk
+                                      budget / modeled per-contract loss,
+                                      max total premium budget /
+                                      per-contract debit)). Never size
+                                      using price stop distance alone.
+
+  Hard blocks                         No quote integrity, no supported
+                                      contract, severe slippage, API
+                                      disconnect, loss cap breached,
+                                      unexpected halt, or expiration
+                                      closeout uncertainty.
+  -----------------------------------------------------------------------
+
+For a fully paid long option, the entire premium plus trading costs can
+be lost. Structural stops may execute at worse prices during gaps or
+thin markets. Prefer bid-side liquidation stress scenarios when
+computing projected loss.
+
+7 | Exit engine and order of operations
+
+6.  Safety first: stale data, broker rejects, market halt, unexpected
+    exercise exposure or risk-limit violation => cancel new entries;
+    initiate broker-safe protective handling where possible.
+
+7.  Underlying structural stop: exit option at executable marketable
+    limit when confirmed structural invalidation occurs; test intrabar
+    trigger vs completed-bar trigger separately.
+
+8.  Option loss guard: independently exit if observed executable bid
+    implies a hard dollar loss threshold; this protects against option
+    decay/IV change before the chart stop.
+
+9.  Profit taking: compare fixed 1.5R, 2R, partial exits, and structure
+    targets as mutually exclusive test arms. R must use option dollars
+    after simulated costs.
+
+10. Trailing: only after threshold favorable excursion; compare 9EMA
+    close-break vs ATR trail; never change a rule in response to
+    unrealized P&L without logging.
+
+11. Time stop: test 3, 6 and 9 completed 5m bars with no minimum
+    favorable excursion; exact threshold chosen on training data.
+
+12. Mandatory intraday liquidation: schedule well ahead of
+    broker-specific expiration interventions; verify flat via broker
+    fill/position data, not merely an order request.
+
+8 | Agent state machine and pseudocode
+
+States: DISABLED → DATA_READY → REGIME_CLASSIFIED → CANDIDATE →
+CONFIRMED → RISK_APPROVED → ORDER_PENDING → FILLED → MANAGED → CLOSED.
+Any safety violation moves to BLOCKED, then requires an explicit reset.
+
+13. On each completed 5m bar: validate timestamps, OHLCV, quotes,
+    corporate actions, calendar, and data freshness.
+
+14. Build only historical-to-now indicators; lock opening range after
+    9:45; classify regime with no look-ahead.
+
+15. Generate at most one setup-specific directional candidate; evaluate
+    required gates; log each gate and rejection.
+
+16. Apply optional RSI / SMT per experimental configuration; do not mix
+    rules across backtest variants.
+
+17. Fetch actual option chain/quotes; check eligible contract, spread,
+    depth, model risk, portfolio and daily limits.
+
+18. If all pass, submit capped limit order with client order ID; monitor
+    fills, partials, cancels and duplicate requests.
+
+19. Manage structural, option loss, profit, trailing, time and session
+    exits; reconcile positions with broker.
+
+20. Record immutable market snapshot, signal features, contract
+    selection, fills, realized P&L, slippage and errors.
+
+9 | Risk policy — example research limits, not optimized parameters
+
+-   Per trade: cap worst-case modeled loss at 0.25–0.50% of account
+    equity; also cap total option premium paid. Never increase risk
+    after a losing trade.
+
+-   Daily stop: suspend entries after 1–1.5% of account equity in
+    realized plus adverse marked open loss, or 3 consecutive full-risk
+    losses; use the more conservative bound.
+
+-   Correlated exposure: aggregate SPY, QQQ and correlated
+    technology-stock directional deltas; do not count them as fully
+    independent trades.
+
+-   Operational controls: max positions, max orders/minute, retry
+    throttling, kill switch, broker reconciliation, alerting,
+    duplicate-order protection, API credential isolation, and manual
+    override.
+
+-   Margin/day-trading rules: as of 2026 the new FINRA intraday-margin
+    framework is effective, with transition permitted for brokers
+    through October 20, 2027. Confirm the actual brokerage
+    implementation and account eligibility [3–4].
+
+-   Expiration: options can be exercised under OCC procedures, and
+    broker deadlines or forced liquidations differ; verify your broker’s
+    exact procedures, including any early-liquidation cutoffs [5–6].
+
+10 | Backtest and validation acceptance checklist
+
+21. Write immutable, versioned definitions of all signals, fill
+    assumptions, eligible universe, trading dates, fees and risk limits
+    before examining final holdout data.
+
+22. Use survivorship-aware historical underlying bars plus historical
+    option NBBO/quotes, actual strikes/expiries, dividends, splits,
+    halts and corporate actions; do not backtest option P&L from the
+    underlying only.
+
+23. Use chronological train → validation → untouched holdout and rolling
+    walk-forward tests; enforce adequate embargo around overlapping
+    trades and adjacent labels.
+
+24. Compare strategy A/B/C/D individually, and 1DTE against longer
+    expiries. Include no-SMT/no-RSI baselines and a simplistic ORB
+    benchmark.
+
+25. Model entries at realistic ask/marketable-limit fills and exits at
+    bids, including variable slippage, commissions, partial fills,
+    rejects, latency, price impact and quote staleness.
+
+26. Report after-cost expectancy per trade in $, R and %; profit factor,
+    drawdown, win rate, payoff ratio, trade count, tail loss, exposure,
+    execution failure and performance by month/regime/symbol.
+
+27. Stress-test twice the normal slippage, wider spreads, missed fills,
+    ±1 bar latency, low-liquidity event days and parameter
+    perturbations. Inspect sensitivity rather than optimizing one
+    precise threshold.
+
+28. Paper trade with live-time quotes and broker confirmations. Require
+    stable risk monitoring and reconciliation before even considering
+    small-size, supervised production.
+
+Suggested promotion gate (policy proposal, not scientific guarantee):
+positive out-of-sample net expectancy with uncertainty intervals
+excluding a materially negative edge; sufficient independent trades
+across regimes; no dependence on one ticker/month; under-stress drawdown
+inside risk budget; operational incidents resolved. If any condition
+fails, remain PAPER ONLY.
+
+11 | Daily operator instructions
+
+  -----------------------------------------------------------------------
+  Phase                               Required action
+  ----------------------------------- -----------------------------------
+  Before open                         Load calendar and catalysts;
+                                      confirm entitlements, broker
+                                      connection and kill switch; build
+                                      gap list; verify prior close and
+                                      valid historical inputs.
+
+  9:30–9:45 ET                        Observe first 15m range; no ORB
+                                      signal before lock. Restrict risky
+                                      opening-spread orders.
+
+  9:45–11:00 ET                       Run ORB and gap-fade screens; save
+                                      all rejected candidates and reason
+                                      codes.
+
+  11:00–13:30 ET                      Focus on first qualified VWAP
+                                      pullback; block repetitive
+                                      crossings/chop.
+
+  13:30 ET onward                     If independently permitted, allow
+                                      1DTE overlay on validated setups;
+                                      confirm adequate remaining exit
+                                      window.
+
+  Before close                        Cancel resting entries, liquidate
+                                      intraday longs, reconcile broker
+                                      positions and exercise risk.
+
+  After close                         Export event log, reconcile fills,
+                                      calculate net strategy metrics,
+                                      check anomalies, freeze version.
+  -----------------------------------------------------------------------
+
+12 | Outstanding decisions before coding
+
+Fix these config values in a research specification: trade universe;
+allowed news-event windows; VWAP calculation feed; gap threshold; swing
+pivot definition; RVOL baseline and minimum sample count; trend/chop
+thresholds; breakout and retest rules; acceptable spread by underlying
+and premium; delta/expiry bands; option model and risk quantiles; max
+hold duration; exact closeout cutoff; day-loss and correlated-risk
+limits.
+
+Sources and evidence trail
+
+[1] Finance Research Letters (2013), “Assessing the profitability of
+intraday opening range breakout strategies.”
+https://www.sciencedirect.com/science/article/pii/S1544612312000438
+
+[2] Barbon and colleagues, “A Profitable Day Trading Strategy for the
+U.S. Equity Market” (working paper; revised 2024).
+https://www.hsg-summit.com/papers/a-profitable-day-trading-strategy-for-the-u-s-equity-market
+
+[3] FINRA (2026), “Understanding the New Intraday Margin Requirements.”
+https://syndication.finra.org/content/understanding-new-intraday-margin-requirements
+
+[4] SEC Investor.gov, “Margin Rules for Day Trading” (updated discussion
+of 2026 changes).
+https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/margin
+
+[5] OCC / Options Industry Council, “Options Exercise: FAQ.”
+https://www.optionseducation.org/referencelibrary/faq/options-exercise
+
+[6] OCC, “Expiration Pricing Considerations” (updated November 10,
+2026).
+https://www.theocc.com/market-data/market-data-reports/series-and-trading-data/expiration-pricing-considerations
+
+[7] Bulkowski, “Opening Range Breakout,” Swing and Day Trading (2012).
+https://onlinelibrary.wiley.com/doi/10.1002/9781119203933.ch11
+
+Research and system design document only; not individualized investment
+advice or a representation of a profitable strategy.

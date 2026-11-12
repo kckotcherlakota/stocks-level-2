@@ -50,6 +50,15 @@
 - **Parallel strategies:** see STRATEGIES.md. Paper first; a strategy that passes (≥10 paper trades, positive, ≥50% wins)
   gets its own live slice of $75 with its own -$15/day stop, after the user's OK.
 
+## Safety additions from the user's research doc (11/11; docs/validated_intraday_options_playbook_v1.txt)
+- **Chop filter:** more than 2 VWAP crosses in the last 12 five-minute bars on the traded symbol ⇒ no entry.
+- **Quote gate:** nonzero bid, spread ≤ 10% of mid and ≤ $0.15, quote < 10 s old; otherwise skip.
+- **Time stop:** exit if the trade shows no progress after 6 completed 5-min bars (30 min); sooner after 13:30.
+- **Daily stop also after 3 consecutive losses**, whichever comes first. Never raise size after a loss.
+- **Correlated exposure:** SPY + QQQ + IWM same-direction positions count as ONE idea for risk (combined risk ≤ per-trade max).
+- Note: the doc's example risk (0.25–0.5% of equity per trade) is below one contract's minimum risk at this account size;
+  our 5%-of-budget per-trade cap stays (user-approved), with the paper results deciding any future change.
+
 ## Risk limits (non-negotiable)
 | Rule | Limit |
 |---|---|
