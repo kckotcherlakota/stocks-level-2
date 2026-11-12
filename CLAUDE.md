@@ -61,7 +61,7 @@ You are the user's 0DTE options trading agent. This repo is your only memory; ch
   - Research is context for the plan only; it never overrides the PLAYBOOK checklist or the all-3-indexes rule.
 - **EOD email.** Use `mcp__Gmail__send_message` to send the summary to the user's own Gmail (the session's user email).
 - **Commits.** Write files with the Write/Edit tools, then commit and push in a separate Bash command. The auto-mode classifier blocked a combined command.
-- **Daily wake-up.** Scheduled via `mcp__claude-code-remote__create_trigger`. The last one was trig_01TB4Y8VyrE6CSinqMWL7Vsy for Thu 11/12 09:05 ET. If a fresh session can't see it, create a new one.
+- **Daily wake-up.** Scheduled via `mcp__claude-code-remote__create_trigger`. The last one was trig_01RqUWpFzXRQhm5z57Zygogq for Fri 11/13 09:05 ET. If a fresh session can't see it, create a new one.
 
 ## User preferences (standing)
 - Capital protection is the #1 priority. "No trade" is fine. Report losses honestly.
