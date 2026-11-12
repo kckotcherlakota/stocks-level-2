@@ -6,6 +6,21 @@ User: "We should parallel try other strategies while this [main] remains our mai
 **Mak1 (A). Index-agreement 0DTE** — SPY/QQQ/IWM all agree; opening-range break or VWAP loss/hold; 9:40–11:00 and 13:30–15:00.
 Rules in PLAYBOOK. Record: 11/09 -9.54, 11/10 +39.73, 11/11 +26.91, 11/12 -13.09.
 
+
+## Mak2 (LIVE, small slice — user 11/12 ~15:05 ET: "Let's try new strategies mak2 with csco"; chose "Small live slice")
+**Single-stock post-earnings opening-range break.** First instance: CSCO on Fri 11/13 (CSCO reports 11/12 after close).
+- Budget slice: up to **$40 premium/trade, max loss $10/trade, −$15/day Mak2 stop**, carved out of the agent budget
+  (Mak1 keeps the rest). Mak2 losses/profits count toward the same daily/weekly agent limits.
+- Never hold through the earnings print; enter only after the reaction.
+- Setup (after 9:45 ET): 15-min opening range (9:30–9:45) frozen. Trade in the gap direction only: gap up → call on a 5-min close above
+  the OR high that holds (no immediate reclaim); gap down → put on a 5-min close below the OR low. Skip if the gap is < 2% or the
+  stock is back inside the prior-day range (no clear reaction).
+- Contract: nearest weekly (11/13 or next Fri), |delta| 0.35–0.45, spread ≤ 5% of mid (PLAYBOOK single-name rule), nonzero bid.
+- Exits: stop = 5-min close back inside the OR (plus broker disaster stop sized so loss ≤ $10); take profit +30–50% at bid − 0.01;
+  time stop 30 min; flat by 11:00 ET on day one (morning-only test).
+- Max 2 Mak2 trades/day; stop after 1 loss.
+- Record (Mak2): —
+
 ## Experiments (PAPER ONLY, zero money — user 11/11: "keep testing these")
 **Priority (user 11/12):** keep the paper experiments running and logged every scan, but **Mak1 comes first until the day
 has logged a profit**. If a Mak1 setup and a paper signal compete for attention, handle Mak1 first; log paper afterwards.

@@ -148,3 +148,8 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 2. Session: scan every ~10–15 min for setups; log every trade (time, contract, entry, exit, reason, P&L).
 3. Stop when the daily target or daily loss limit is hit.
 4. EOD: update `STATE.md`, add lessons to `LESSONS.md`, commit + push, email a summary to the user.
+
+## Mak2 live slice (user, 2026-11-12 ~15:05 ET)
+- User approved a small live slice for Mak2 (single-stock post-earnings OR break; first: CSCO 11/13). Limits: ≤ $40 premium,
+  ≤ $10 loss/trade, −$15/day for Mak2, max 2 Mak2 trades/day, stop after 1 Mak2 loss. Counts toward the agent daily/weekly stops.
+  Spread ≤ 5% of mid. Rules in STRATEGIES.md "Mak2".
