@@ -2,11 +2,11 @@
 
 User: "We should parallel try other strategies while this [main] remains our main working one."
 
-## Main (live, unchanged)
-**A. Index-agreement 0DTE** — SPY/QQQ/IWM all agree; opening-range break or VWAP loss/hold; 9:40–11:00 and 13:30–15:00.
+## Main (live) — **Mak1** (user's name, 11/11): the ONLY live strategy and it has the COMPLETE budget
+**Mak1 (A). Index-agreement 0DTE** — SPY/QQQ/IWM all agree; opening-range break or VWAP loss/hold; 9:40–11:00 and 13:30–15:00.
 Rules in PLAYBOOK. Record: 11/09 -9.54, 11/10 +39.73, 11/11 +26.91.
 
-## Experiments (PAPER first, zero money)
+## Experiments (PAPER ONLY, zero money — user 11/11: "keep testing these")
 Each scan, check these too. When one triggers, log a paper trade in the journal's "Paper trades" table using real
 option quotes: entry = ask, exit = bid, same stop/target rules as live. A strategy goes live only after ≥ 10 paper trades
 with positive total P&L and win rate ≥ 50%, and only with the user's OK.
