@@ -1,5 +1,13 @@
 # LESSONS (newest first)
 
+## 2026-11-12 — SPY 756P: −$13.09 — marginal VWAP loss on a chop afternoon; exit when the agreement breaks
+- Entry 14:03 when QQQ slipped 15¢ under VWAP; SPY's two closes were only 3¢ / 22¢ under VWAP. Too marginal on a day with
+  repeated VWAP crosses. Need a clear close below VWAP on ALL 3 (not a tick), or skip.
+- 30-s checks ran (14:04:25, :55, 14:05:25, :55, 14:06:25). At 14:05:55 the put was bid 0.30 (−$6) and QQQ had already
+  reclaimed VWAP — the 3-index agreement that justified the entry was gone. I held because my manual stop was SPY-only (>759.1).
+  The disaster stop then filled at 0.23 at 14:06:20, between checks. **Rule: if any of the 3 reclaims VWAP while in a VWAP-loss
+  put (or loses it in a call), exit at bid − 0.01 immediately** — that would have been ~−$6 instead of −$13.
+
 ## 2026-11-11 (evening) — Process: goals vs. risk
 - A daily % goal is useful only as a direction for effort (more qualifying setups, both windows, better exits), never as a
   reason to take B-grade trades or widen stops. Red-day minimization rules now enforce this (PLAYBOOK).
