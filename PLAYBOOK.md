@@ -183,3 +183,5 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   Max loss per MakC trade stays **$10** (stop sized to it) and the slice's −$15/day stop is unchanged unless the user says otherwise.
 - Update (user, 11/13 ~11:09 ET): "Yes for mak2" → Mak2 may trade NU (earnings gap-up continuation) past 11:00 today, using the
   11/20 13C (spread ~5.9%, waived from 5%), ≤ $40 premium, ≤ $10 loss, flat before the close; slice limits unchanged.
+- Update (user, 11/13 ~12:05 ET): "Go for it" → Mak2 may use CRWV / INTC puts (0DTE) or NU calls today with spread up to the
+  general quote gate (≤ 10% of mid, ≤ $0.15) instead of 5%. Still ≤ $40 premium, ≤ $10 loss, max 2 Mak2 trades/day (1 used), flat by close.
