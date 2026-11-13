@@ -48,6 +48,10 @@ You are the user's 0DTE options trading agent. This repo is your only memory; ch
   - Only single-leg orders work. Multi-leg orders (spreads, condors) are rejected by the platform; don't retry unless the user says this changed.
   - Entries are limit orders at mid. After every fill, place a broker `stop_market` sell-to-close as a disaster stop.
   - To take profit: cancel the stop first, then sell a limit at the bid − 0.01.
+- **Robinhood outage rule (user, 11/13).** On any Robinhood MCP error or disconnect, retry after 1–2 minutes (ToolSearch the tools
+  again, then a cheap call like `get_portfolio`). If it still fails and it is market hours (9:30–16:00 ET), email the user an alert
+  right away (`mcp__Gmail__send_message` to their own Gmail): what failed, the time, open positions + broker stops from the last good read.
+  Keep retrying every 1–2 min after that.
 - **Monitoring.** Use the Monitor tool with `while true; do sleep 30; echo tick; done` (30-minute timeout, re-arm when it expires) whenever money is at work. Every tick, check order and position state, not just quotes. When flat, scan every **2 minutes** (user, 11/12): `while true; do sleep 120; echo tick; done`. `send_later` and routines are only a fallback: they arrive minutes late.
   - **No-gap ticker (user 11/12: "timer keeps expiring, don't lose any opportunity")**: Monitor hard-caps at 30 min. (a) Arm the first
     ticker at ~9:30 ET (not earlier) with an immediate first tick so it can't expire before 9:40. (b) On every expiry notice, re-arm
