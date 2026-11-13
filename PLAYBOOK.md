@@ -181,3 +181,5 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - B today: SPY gap +0.4% (< 0.7% trigger) → no B signal expected; C is the live candidate (11:00–13:30).
 - Update (user, 11/13 ~11:05 ET): "Go for 70$ for makC" → MakC premium cap **$70** today (above the $50 slice; user-approved).
   Max loss per MakC trade stays **$10** (stop sized to it) and the slice's −$15/day stop is unchanged unless the user says otherwise.
+- Update (user, 11/13 ~11:09 ET): "Yes for mak2" → Mak2 may trade NU (earnings gap-up continuation) past 11:00 today, using the
+  11/20 13C (spread ~5.9%, waived from 5%), ≤ $40 premium, ≤ $10 loss, flat before the close; slice limits unchanged.
