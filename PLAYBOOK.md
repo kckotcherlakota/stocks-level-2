@@ -179,3 +179,5 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   max 2 slice trades/day, stop the slice after 1 loss. Spread ≤ 10% of mid & ≤ $0.15 (quote gate). Mak1 keeps priority.
 - No extra money: the $50 is shared, not $50 each. Reverts to paper-only after today unless the user extends it.
 - B today: SPY gap +0.4% (< 0.7% trigger) → no B signal expected; C is the live candidate (11:00–13:30).
+- Update (user, 11/13 ~11:05 ET): "Go for 70$ for makC" → MakC premium cap **$70** today (above the $50 slice; user-approved).
+  Max loss per MakC trade stays **$10** (stop sized to it) and the slice's −$15/day stop is unchanged unless the user says otherwise.
