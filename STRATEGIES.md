@@ -20,6 +20,15 @@ Mak2 is secondary and must never take budget or attention from a live Mak1 setup
   Window 9:45–11:00 only. Counts toward the combined agent daily/weekly stops.
 - **Exits:** target 50% gap fill or prior close (sell at bid − 0.01, scale 1 at +30% if 2 contracts fit); stop = 5-min close back
   beyond the OR high/low; time stop 30 min.
+- **Mak1 sign-off required (user 11/13: "Mak3 should work by confirming the setup and consulting mak1 and convince it for trade"):**
+  1. *Confirm:* Mak3's own trigger is complete (gap ≥ 0.7%, 5-min close back inside the OR after the failed high/low, VWAP lost/reclaimed).
+  2. *Consult Mak1:* run the Mak1 checklist on the fade direction: (a) price vs VWAP + 9/21 EMA agree, (b) level = OR/prior-day H/L
+     break-and-fail, (c) SPY & QQQ agree (IWM too for full score), (d) no macro event in 30 min; plus chop filter (≤ 2 VWAP crosses in
+     12 bars) and quote gate.
+  3. *Convince:* Mak1 approves only at ≥ 3/4 checklist + chop filter + quote gate, AND no open Mak1 position in the opposite direction.
+     If Mak1 already holds the same direction/index, Mak3 may not add (one idea = one risk).
+  4. Write the case in the journal before the order: "Mak3 → Mak1: <setup>, checklist x/4, chop ok, quote ok → APPROVED/REJECTED (why)".
+     No approval = no trade.
 - Priority: Mak1 first; Mak3 must not take attention from a live Mak1 position. Mak1 and Mak3 in the same index/direction count as ONE idea for risk.
 - Record (Mak3): —
 

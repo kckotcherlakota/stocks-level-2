@@ -199,3 +199,6 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Budgets after the move: Mak1 $183.20, Mak2 $51.92, Mak3 $60.00 → total $295.12 (unchanged). Cash floor $3.48.
 - Mak3 limits: premium ≤ $45, loss ≤ $10/trade, −$15/day, max 2/day, stop after 1 loss, 9:45–11:00, pause at $30. Rules in STRATEGIES.md.
 - Mak1 %-limits now on $183.20: loss/trade $9.16 (5%), −$18.32/day, −$36.64/week, premium cap ≈ $46 (25%), A+ cap ≈ $82 (45%), A+ loss ≈ $13.74.
+- Mak3 entry gate (user, 11/13 evening): every Mak3 trade must (1) confirm its own gap-fade trigger, (2) consult Mak1's checklist
+  (≥ 3/4 + chop filter + quote gate, no conflict with an open Mak1 position), (3) log the "Mak3 → Mak1" case and Mak1's verdict in the
+  journal before ordering. No Mak1 approval = no Mak3 trade. Details in STRATEGIES.md "Mak3".
