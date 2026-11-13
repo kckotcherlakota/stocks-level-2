@@ -172,3 +172,10 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   A+ cap (45%, ≈ $120); use the 2-contract scale-out. Allowed at full size even as the first trade of the day.
 - Unchanged: combined daily stop −10% of total budget; weekly stop −20%; stop after 2 losses; never let a green day turn red;
   exit when the 3-index agreement breaks (LESSONS 11/12); everything else in this playbook. Non-conviction setups keep normal sizing.
+
+## MakB + MakC live today on the Mak2 slice (user, 2026-11-13 ~11:03 ET)
+- User: "Run makC and makB with same mak2 budget for today." → B (gap fade) and C (midday VWAP bounce) trade LIVE today only,
+  sharing Mak2's $50 sub-budget and limits: ≤ $40 premium/trade, ≤ $10 loss/trade, −$15/day for the whole Mak2 slice (Mak2+B+C),
+  max 2 slice trades/day, stop the slice after 1 loss. Spread ≤ 10% of mid & ≤ $0.15 (quote gate). Mak1 keeps priority.
+- No extra money: the $50 is shared, not $50 each. Reverts to paper-only after today unless the user extends it.
+- B today: SPY gap +0.4% (< 0.7% trigger) → no B signal expected; C is the live candidate (11:00–13:30).
