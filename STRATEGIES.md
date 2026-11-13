@@ -24,7 +24,8 @@ Mak2 is secondary and must never take budget or attention from a live Mak1 setup
 - Exits: stop = 5-min close back inside the OR (plus broker disaster stop sized so loss ≤ $10); take profit +30–50% at bid − 0.01;
   time stop 30 min; flat by 11:00 ET on day one (morning-only test).
 - Max 2 Mak2 trades/day; stop after 1 loss.
-- Record (Mak2): —
+- Record (Mak2): 11/13 NU 11/20 13C 1× 0.39→0.41 **+$1.92** (time stop). CSCO 9:50 signal missed (broker offline); CRWV/INTC/CSCO-put skipped (spreads 7–30%). Slice $51.92.
+- MakB/MakC live-for-a-day (11/13, user): no qualifying signal (no 0.7% gap; VWAP touches never gave a clean rejection on all 3).
 
 ## Experiments (PAPER ONLY, zero money — user 11/11: "keep testing these")
 **Priority (user 11/12):** keep the paper experiments running and logged every scan, but **Mak1 comes first until the day

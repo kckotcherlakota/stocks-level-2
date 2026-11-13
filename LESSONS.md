@@ -1,5 +1,18 @@
 # LESSONS (newest first)
 
+## 2026-11-13 — −$22.61 day: range-day breakout buys + "go big" size; broker outage cost the trend leg
+- **Broker outage:** Robinhood MCP was down 09:30–10:20; the real move (SPY 760→748, CSCO OR-low break 9:50) happened then. Wake-up
+  fired 50 min late too. Fixes: retry/alert rule (CLAUDE.md) and earlier Monday trigger.
+- **Afternoon = range, not trend.** SPY/QQQ/IWM tested the same ceiling 5× (13:30–14:11). Every 5-min close above it faded within
+  1–2 min (IWM 277C −$14, SPY 755C $0, IWM 277C −$10). Rule: **after 2 failed breakouts of the same level, stop buying breakouts there**;
+  wait for a retest-and-hold (pullback to the broken level that holds a full bar) or skip.
+- **Fast exits worked:** exiting when 2 of 3 indexes lost the level kept losses at −$14/−$10 instead of the −$20/−$14 stops, and the
+  breakeven stop turned the SPY trade into a scratch. Keep this.
+- **Size after a loss:** "go big" (2 contracts) on a range day doubled the damage. Size up only for A+ trend setups, never for range breakouts.
+- **Mak2 single-stock options:** CRWV/INTC/CSCO weeklies had 7–30% spreads midday; only NU (cheap stock, tight weekly) was tradable.
+  Pre-screen spreads before the open; the CSCO 0DTE spread at the 9:50 signal is unknown (offline).
+- **Mak2 NU +$1.92:** time stop after 30 min with +13% peak; a slow grinder needs a larger move — fine as a scratch-plus.
+
 ## 2026-11-12 — SPY 756P: −$13.09 — marginal VWAP loss on a chop afternoon; exit when the agreement breaks
 - Entry 14:03 when QQQ slipped 15¢ under VWAP; SPY's two closes were only 3¢ / 22¢ under VWAP. Too marginal on a day with
   repeated VWAP crosses. Need a clear close below VWAP on ALL 3 (not a tick), or skip.
