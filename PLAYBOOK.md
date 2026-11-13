@@ -190,3 +190,6 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Update (user, 11/13 ~13:30 ET): "If mak1 is good to go go big on it and skip mak2 risk" → Mak2 CSCO put CANCELLED.
   Mak1 13:30 breakout call (if triggered): 2 contracts (scale-out), premium ≤ $120, max loss ≤ $20 (A+ tier size, user-approved for
   this trade even though the news backdrop is bearish); overrides the half-size first-trade rule for this trade only.
+- Standing rule (user, 11/13 ~13:52 ET): "Override applied only on go big on or after 2 red days" → the "go big" size override
+  (Mak1: 2 contracts, ≤ $120 premium, ≤ $15 loss/trade, still inside the combined daily stop; valid setups only) may be used only
+  when the 2 previous/most recent trading days were red (e.g., 11/12 −$13.09 and 11/13 −$12 so far). Otherwise normal post-loss rules.
