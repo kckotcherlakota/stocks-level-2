@@ -187,3 +187,6 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   general quote gate (≤ 10% of mid, ≤ $0.15) instead of 5%. Still ≤ $40 premium, ≤ $10 loss, max 2 Mak2 trades/day (1 used), flat by close.
 - Update (user, 11/13 ~13:29 ET): "Go for it mak2" → Mak2 #2 may use CSCO 11/20 92P at ~$70–77 premium (above the $40 cap),
   max loss still $10 (stop sized), spread ≤ 10% (quote gate). Today only.
+- Update (user, 11/13 ~13:30 ET): "If mak1 is good to go go big on it and skip mak2 risk" → Mak2 CSCO put CANCELLED.
+  Mak1 13:30 breakout call (if triggered): 2 contracts (scale-out), premium ≤ $120, max loss ≤ $20 (A+ tier size, user-approved for
+  this trade even though the news backdrop is bearish); overrides the half-size first-trade rule for this trade only.
