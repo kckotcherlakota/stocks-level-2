@@ -2,8 +2,9 @@
 
 - Last updated: 2026-11-13 (Fri) ~14:15 ET (EOD roll-up; stopped trading after 2nd loss)
 - **Agent budget: $295.12** ($317.73 − $22.61 on 11/13). Profits/losses from agent trades change it.
-  - **Mak1 budget: $243.20** ($267.73 − $24.53). Limits: 5% = $12.16 loss/trade, 10% = −$24.32/day, 20% = −$48.64/week;
-    premium cap 25% ≈ $60; A+ cap 45% ≈ $109; A+ Conviction loss 7.5% ≈ $18.
+  - **Mak1 budget: $183.20** ($243.20 − $60 to Mak3, user 11/13). Limits: 5% = $9.16 loss/trade, 10% = −$18.32/day, 20% = −$36.64/week;
+    premium cap 25% ≈ $46; A+ cap 45% ≈ $82; A+ Conviction loss 7.5% ≈ $13.74.
+  - **Mak3 budget: $60.00** (gap fade = strategy B, LIVE from 11/16). ≤ $45 premium, ≤ $10 loss, −$15/day, max 2/day, 9:45–11:00, pause at $30.
   - **Mak2 budget: $51.92** ($50 + $1.92). Per trade ≤ $40 premium, ≤ $10 loss, −$15/day, max 2/day, stop after 1 loss.
 - **Cash floor (never go below): $3.48.** Account cash $298.60 (EOD 11/13) = budget $295.12 + floor $3.48 ✓.
 - Combined agent stops: −10%/day of total ($29.51), −20%/week ($59.02).

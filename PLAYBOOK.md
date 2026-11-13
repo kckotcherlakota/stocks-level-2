@@ -193,3 +193,9 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Standing rule (user, 11/13 ~13:52 ET): "Override applied only on go big on or after 2 red days" → the "go big" size override
   (Mak1: 2 contracts, ≤ $120 premium, ≤ $15 loss/trade, still inside the combined daily stop; valid setups only) may be used only
   when the 2 previous/most recent trading days were red (e.g., 11/12 −$13.09 and 11/13 −$12 so far). Otherwise normal post-loss rules.
+
+## Mak3 = strategy B live (user, 2026-11-13 evening)
+- User: "Bring up B as mak3 and share 60$ from mak1." → Gap fade goes LIVE as **Mak3** with **$60** taken from Mak1.
+- Budgets after the move: Mak1 $183.20, Mak2 $51.92, Mak3 $60.00 → total $295.12 (unchanged). Cash floor $3.48.
+- Mak3 limits: premium ≤ $45, loss ≤ $10/trade, −$15/day, max 2/day, stop after 1 loss, 9:45–11:00, pause at $30. Rules in STRATEGIES.md.
+- Mak1 %-limits now on $183.20: loss/trade $9.16 (5%), −$18.32/day, −$36.64/week, premium cap ≈ $46 (25%), A+ cap ≈ $82 (45%), A+ loss ≈ $13.74.

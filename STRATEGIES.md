@@ -10,12 +10,25 @@ Rules in PLAYBOOK. Record: 11/09 -9.54, 11/10 +39.73, 11/11 +26.91, 11/12 -13.09
 **Priority (user 11/12): Mak1 is the PRIMARY money maker.** Mak1 setups always come first (attention, budget, monitoring);
 Mak2 is secondary and must never take budget or attention from a live Mak1 setup or position.
 
+## Mak3 (LIVE, user 11/13 evening: "Bring up B as mak3 and share 60$ from mak1") — Gap fade on SPY/QQQ/IWM
+- **Budget: $60** (moved from Mak1). Own P&L adds to / subtracts from its $60. If it falls to $30, pause Mak3 and ask the user.
+- Note: promoted with 0 paper trades — user's explicit choice; treat the first 10 trades as the validation sample and report the record.
+- **Trigger (strategy B):** index gaps ≥ 0.7% vs prior close; after 9:45 price fails at the OR high (gap up → put) / OR low (gap down → call)
+  AND loses (or reclaims) VWAP. Prefer agreement of all 3 indexes; trade the one with the cleanest failure.
+- **Vehicle:** 0DTE put/call, delta ~0.30–0.45, quote gate (spread ≤ 10% of mid, ≤ $0.15).
+- **Limits:** premium ≤ $45, max loss $10/trade (broker stop sized to it), −$15/day for Mak3, max 2 Mak3 trades/day, stop after 1 loss.
+  Window 9:45–11:00 only. Counts toward the combined agent daily/weekly stops.
+- **Exits:** target 50% gap fill or prior close (sell at bid − 0.01, scale 1 at +30% if 2 contracts fit); stop = 5-min close back
+  beyond the OR high/low; time stop 30 min.
+- Priority: Mak1 first; Mak3 must not take attention from a live Mak1 position. Mak1 and Mak3 in the same index/direction count as ONE idea for risk.
+- Record (Mak3): —
+
 ## Mak2 (LIVE, small slice — user 11/12 ~15:05 ET: "Let's try new strategies mak2 with csco"; chose "Small live slice")
 **Single-stock post-earnings opening-range break.** First instance: CSCO on Fri 11/13 (CSCO reports 11/12 after close).
 - **Mak2 budget: $50** (user 11/12: "allocate some budget for mak2 but core builder is mak1"), carved from the $317.73 agent budget.
   Mak2's own P&L adds to / subtracts from its $50. If it falls to $25, pause Mak2 and ask the user.
   Per trade: up to **$40 premium, max loss $10; −$15/day Mak2 stop**.
-- **Mak1 budget: the rest ($267.73)** — Mak1's %-limits are computed on its own budget (5% = $13.39 loss/trade, 10% = −$26.77/day). Mak2 losses/profits count toward the same daily/weekly agent limits.
+- **Mak1 budget: $183.20** (11/13 EOD $243.20 − $60 moved to Mak3, user 11/13). Mak1's %-limits are computed on its own budget (5% = $9.16 loss/trade, 10% = −$18.32/day). Mak2/Mak3 P&L count toward the same daily/weekly agent limits.
 - Never hold through the earnings print; enter only after the reaction.
 - Setup (after 9:45 ET): 15-min opening range (9:30–9:45) frozen. Trade in the gap direction only: gap up → call on a 5-min close above
   the OR high that holds (no immediate reclaim); gap down → put on a 5-min close below the OR low. Skip if the gap is < 2% or the
@@ -63,7 +76,7 @@ Fixed definitions for all paper experiments (log every gate + rejection reason):
 ## Scoreboard (paper) — paper bankroll: **$100.00**
 | ID | Trades | Wins | Paper P&L | Status |
 |---|---|---|---|---|
-| B | 0 | 0 | $0 | paper |
+| B | 0 | 0 | $0 | → LIVE as Mak3 (11/13) |
 | C | 0 | 0 | $0 | paper |
 | D | 0 | 0 | $0 | paper |
 | E | 0 | 0 | $0 | paper |
