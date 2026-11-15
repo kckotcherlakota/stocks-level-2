@@ -52,6 +52,10 @@ You are the user's 0DTE options trading agent. This repo is your only memory; ch
   again, then a cheap call like `get_portfolio`). If it still fails and it is market hours (9:30–16:00 ET), email the user an alert
   right away (`mcp__Gmail__send_message` to their own Gmail): what failed, the time, open positions + broker stops from the last good read.
   Keep retrying every 1–2 min after that.
+- **Scripts for repetitive jobs (user 11/15: "for repetitive tasks use scripts").** Use them instead of hand-writing the same commands:
+  `tools/jlog.sh "<line>"` → append to today's journal (creates it with a scan-log header) and push; `-n` = no push.
+  `tools/push.sh "<msg>"` → git add/commit (with trailers)/push with retries + status. `tools/trade_calc.py` → pre-trade math (below).
+  If a task repeats 3+ times in a session, write a new script in `tools/` and note it here.
 - **Fast execution (user 11/15).** `python3 tools/trade_calc.py` does the pre-trade math in one call:
   `size --bid B --ask A --max-loss L --max-premium P [--stop-pct 0.20]` → limit, qty, stop, targets, spread gate (rc=1 = skip);
   `exit --bid B` → sell price + trail; `chop --closes … --vwap …` → VWAP crosses (>2 = no trade);
