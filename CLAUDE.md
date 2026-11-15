@@ -52,6 +52,14 @@ You are the user's 0DTE options trading agent. This repo is your only memory; ch
   again, then a cheap call like `get_portfolio`). If it still fails and it is market hours (9:30–16:00 ET), email the user an alert
   right away (`mcp__Gmail__send_message` to their own Gmail): what failed, the time, open positions + broker stops from the last good read.
   Keep retrying every 1–2 min after that.
+- **Fast execution (user 11/15).** `python3 tools/trade_calc.py` does the pre-trade math in one call:
+  `size --bid B --ask A --max-loss L --max-premium P [--stop-pct 0.20]` → limit, qty, stop, targets, spread gate (rc=1 = skip);
+  `exit --bid B` → sell price + trail; `chop --closes … --vwap …` → VWAP crosses (>2 = no trade);
+  `daytype --adx X --adx-prev Y --vwap-now V --vwap-30m W` → TREND / RANGE / UNCERTAIN; `rr --entry --stop --target` → R:R ≥ 1.5.
+  Runbook — entry: (1) in ONE parallel batch: equity quotes + option quote + get_option_orders; (2) trade_calc size; (3) place_option_order
+  (skip review_option_order once the quote gate passed this minute); (4) get_option_orders to confirm fill; (5) stop_market at once.
+  Exit: cancel stop → confirm cancelled → sell limit at bid − 0.01 → confirm fill; if not filled in ~30 s, re-place the stop.
+  Pre-arm when a trigger is near: have instrument IDs + a fresh quote ready so the order goes out right after the bar close.
 - **Monitoring.** Use the Monitor tool with `while true; do sleep 30; echo tick; done` (30-minute timeout, re-arm when it expires) whenever money is at work. Every tick, check order and position state, not just quotes. When flat, scan every **2 minutes** (user, 11/12): `while true; do sleep 120; echo tick; done`. `send_later` and routines are only a fallback: they arrive minutes late.
   - **No-gap ticker (user 11/12: "timer keeps expiring, don't lose any opportunity")**: Monitor hard-caps at 30 min. (a) Arm the first
     ticker at ~9:30 ET (not earlier) with an immediate first tick so it can't expire before 9:40. (b) On every expiry notice, re-arm
