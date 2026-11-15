@@ -13,6 +13,21 @@ User: "We should parallel try other strategies while this [main] remains our mai
   Trend day = ADX ≥ 25 and rising, VWAP sloped, price mostly on one side of VWAP → Mak1 allowed.
   Range day = ADX < 20, VWAP flat (last 30 min), repeated VWAP crosses → **Mak1 breakout/VWAP-break entries blocked; hand off to Mak4.**
   ADX 20–25 = uncertain → Mak1 only A+ setups.
+- **News filter for sideways markets (user 11/15):** headlines decide whether a range can break.
+  - When: at 9:15 ET, then every 30 min from 9:30 to 15:00, and before every Mak1 entry if the last check is more than 15 min old.
+    That is 14 calls a day, under the NewsMCP limit of 20 calls an hour.
+  - How: `mcp__NewsMCP_without_a_key__news` with `sector=financial_services,semiconductors`,
+    `event_type=markets.stock_move,macro_policy.central_bank_decision,corporate_finance.earnings_report`, `verbosity=compact`.
+    Add `subject=` for NVDA/AAPL/MSFT or the Fed when something is pending. Log one line per check:
+    `tools/jlog.sh -n "news HH:MM: CATALYST|QUIET|RISK - <headline>"`.
+  - **QUIET** (no fresh market-moving story in the last 60 min) + day-type RANGE/UNCERTAIN = **sideways day**.
+    Block Mak1 breakout entries and hand the day to Mak4. Don't buy range breakouts with no catalyst (LESSONS 11/13).
+  - **CATALYST** (fresh macro, Fed, or mega-cap story pushing in the same direction as the setup, from 2+ newsrooms):
+    a range break may follow through. Mak1 can enter once the 10-min day-type turns TREND or reaches ADX ≥ 20 and rising, with all 3 indexes confirming.
+    The headline alone never triggers a trade.
+  - **RISK** (a headline against the trade, or a surprise scheduled in the next 30 min, such as a Fed speaker or tariff/geopolitics):
+    no new Mak1 entry. If in a trade, tighten the stop to break-even or exit on 2 of 3 indexes failing.
+  - In a trade, check news on every 3rd 30-second tick (about every 90 s) only if price moves fast against the position. Otherwise keep the 30-min schedule.
 - SPY/QQQ/IWM agreement is ONE filter (correlated), not three votes.
 - **Trailing test:** log every Mak1 trade's result under both exits — live rule (trail after +20%) and fixed (+30% target / original stop) —
   in the journal; review after 10 trades and keep the better one.

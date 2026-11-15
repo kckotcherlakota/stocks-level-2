@@ -209,3 +209,9 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Mak3: rejection → acceptance across VWAP → failed retest; fade exhaustion gaps only, never trend gaps.
 - Mak4 (VWAP range mean reversion) LIVE on good setups only, SPY first, 10:15–14:30, up to $60 drawn from Mak1's budget, ≤ $45 premium,
   ≤ $10 loss, max 2/day, stop after 1 loss. Details in STRATEGIES.md "Mak4".
+
+## Mak1 news filter for sideways markets (user, 2026-11-15)
+- Check NewsMCP at 9:15, every 30 min from 9:30 to 15:00, and before each Mak1 entry if the last check is more than 15 min old. Tag each check CATALYST, QUIET or RISK and log it in the journal.
+- QUIET + RANGE/UNCERTAIN day-type = sideways: no Mak1 breakouts; Mak4 runs instead.
+- CATALYST: Mak1 is allowed only after the day-type confirms (TREND, or ADX ≥ 20 and rising) and all 3 indexes confirm.
+- RISK: no new Mak1 entries; tighten stops on open trades. Details are in STRATEGIES.md under "Mak1 fixes".
