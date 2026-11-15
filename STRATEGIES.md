@@ -2,7 +2,9 @@
 
 User: "We should parallel try other strategies while this [main] remains our main working one."
 
-## Main (live) — **Mak1** (user's name, 11/11): the ONLY live strategy and it has the COMPLETE budget
+## Live strategies (from Mon 11/16): Mak1 $183.20 (main; Mak4 shares up to $60 of it), Mak2 $51.92, Mak3 $60
+
+## Main (live) — **Mak1** (user's name, 11/11): primary money maker, $183.20
 **Mak1 (A). Index-agreement 0DTE** — SPY/QQQ/IWM all agree; opening-range break or VWAP loss/hold; 9:40–11:00 and 13:30–15:00.
 
 **Mak1 fixes (user 11/15):**
