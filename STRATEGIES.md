@@ -4,11 +4,36 @@ User: "We should parallel try other strategies while this [main] remains our mai
 
 ## Main (live) — **Mak1** (user's name, 11/11): the ONLY live strategy and it has the COMPLETE budget
 **Mak1 (A). Index-agreement 0DTE** — SPY/QQQ/IWM all agree; opening-range break or VWAP loss/hold; 9:40–11:00 and 13:30–15:00.
+
+**Mak1 fixes (user 11/15):**
+- **Economic-news check is MANDATORY** (not one of the 3-of-4): no entry within 30 min before a scheduled release (CPI, FOMC, jobs, Fed speakers).
+- **Day-type gate (trend vs range):** classify on 15-min bars with ADX(14) + VWAP slope before every entry.
+  Trend day = ADX ≥ 25 and rising, VWAP sloped, price mostly on one side of VWAP → Mak1 allowed.
+  Range day = ADX < 20, VWAP flat (last 30 min), repeated VWAP crosses → **Mak1 breakout/VWAP-break entries blocked; hand off to Mak4.**
+  ADX 20–25 = uncertain → Mak1 only A+ setups.
+- SPY/QQQ/IWM agreement is ONE filter (correlated), not three votes.
+- **Trailing test:** log every Mak1 trade's result under both exits — live rule (trail after +20%) and fixed (+30% target / original stop) —
+  in the journal; review after 10 trades and keep the better one.
 Rules in PLAYBOOK. Record: 11/09 -9.54, 11/10 +39.73, 11/11 +26.91, 11/12 -13.09.
 
 
 **Priority (user 11/12): Mak1 is the PRIMARY money maker.** Mak1 setups always come first (attention, budget, monitoring);
 Mak2 is secondary and must never take budget or attention from a live Mak1 setup or position.
+
+## Mak4 (LIVE when a good setup appears — user 11/15: "use mak4 if you find good setup for it, but budget is 60$ shared with mak1") — VWAP range mean reversion
+- **Budget:** up to **$60 drawn from Mak1's $183.20** (shared pool, not new money). Mak4 losses count against Mak1's daily (−$18.32) and
+  weekly limits. Per trade: premium ≤ $45, max loss $10 (broker stop sized to it), max 2 Mak4 trades/day, stop Mak4 after 1 loss.
+- **Market / time:** SPY first (QQQ only as a separate test, never both at once). 10:15–14:30 ET.
+- **Regime (ALL mandatory):** ADX(14) on 15-min < 20 and not rising sharply; VWAP roughly flat over the last 30 min; a clear range with
+  support and resistance each tested before; no major release coming. Avoid expanding Bollinger bands, rising ADX, trend days.
+- **Setup used live:** range rejection + VWAP return. Call: price at range support / lower Bollinger band (20,2) → bullish rejection candle
+  → RSI(14) was < 35 and turns up. Put: mirror at resistance / upper band with RSI > 65 turning down.
+- **Entry / exit:** enter on the confirming candle close; stop beyond the rejected support/resistance; target VWAP; reward ≥ 1.5:1 to VWAP
+  after estimated costs (option-level, not share-level) or skip. Exit early if the reversal fails. No averaging down. Quote gate as Mak1.
+- **Paper side-tests (log only):** failed-breakout fakeout, VWAP 1σ/2σ deviation snapback, double-test retest, and a simple version
+  (levels + VWAP only, no ADX/BB/RSI). Keep the extra indicators only if they improve net results after costs.
+- **Conflicts:** Mak1 and Mak4 never hold opposite directions on the same underlying. On a trend day (Mak1 regime) Mak4 is off.
+- Record (Mak4): —
 
 ## Mak3 (LIVE, user 11/13 evening: "Bring up B as mak3 and share 60$ from mak1") — Gap fade on SPY/QQQ/IWM
 - **Budget: $60** (moved from Mak1). Own P&L adds to / subtracts from its $60. If it falls to $30, pause Mak3 and ask the user.
@@ -20,6 +45,10 @@ Mak2 is secondary and must never take budget or attention from a live Mak1 setup
   Window 9:45–11:00 only. Counts toward the combined agent daily/weekly stops.
 - **Exits:** target 50% gap fill or prior close (sell at bid − 0.01, scale 1 at +30% if 2 contracts fit); stop = 5-min close back
   beyond the OR high/low; time stop 30 min.
+- **Mak3 fixes (user 11/15):** VWAP cross alone is not enough → require (1) rejection at the OR high/low, (2) *acceptance* across VWAP
+  (a full 5-min close on the other side + the next bar not reclaiming), (3) a **failed retest** of VWAP from the new side, then enter.
+  **Gap type:** fade only *exhaustion* gaps (gap into prior-day range/resistance, fading volume, no fresh catalyst, first bars losing
+  momentum). Do NOT fade *trend* gaps (news-driven, above-normal volume, holding beyond the OR, all 3 indexes trending — e.g. 11/13).
 - **Mak1 sign-off required (user 11/13: "Mak3 should work by confirming the setup and consulting mak1 and convince it for trade"):**
   1. *Confirm:* Mak3's own trigger is complete (gap ≥ 0.7%, 5-min close back inside the OR after the failed high/low, VWAP lost/reclaimed).
   2. *Consult Mak1:* run the Mak1 checklist on the fade direction: (a) price vs VWAP + 9/21 EMA agree, (b) level = OR/prior-day H/L
@@ -45,6 +74,9 @@ Mak2 is secondary and must never take budget or attention from a live Mak1 setup
 - Contract: nearest weekly (11/13 or next Fri), |delta| 0.35–0.45, spread ≤ 5% of mid (PLAYBOOK single-name rule), nonzero bid.
 - Exits: stop = 5-min close back inside the OR (plus broker disaster stop sized so loss ≤ $10); take profit +30–50% at bid − 0.01;
   time stop 30 min; flat by 11:00 ET on day one (morning-only test).
+- **Mak2 fixes (user 11/15):** entry needs a **5-min candle CLOSE outside the OR and a successful retest** of the OR edge (holds a full bar)
+  — no entries on the first poke. **Option check before entry:** IV vs pre-earnings (avoid buying when IV is still elevated and falling),
+  expiration ≥ the next weekly (avoid 0DTE single-stock), open interest ≥ 500 and spread ≤ 5% of mid.
 - Max 2 Mak2 trades/day; stop after 1 loss.
 - Record (Mak2): 11/13 NU 11/20 13C 1× 0.39→0.41 **+$1.92** (time stop). CSCO 9:50 signal missed (broker offline); CRWV/INTC/CSCO-put skipped (spreads 7–30%). Slice $51.92.
 - MakB/MakC live-for-a-day (11/13, user): no qualifying signal (no 0.7% gap; VWAP touches never gave a clean rejection on all 3).

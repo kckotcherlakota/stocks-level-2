@@ -121,7 +121,7 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   Scan every 10 min. Exit any position that stalls 8–10 min.
 - 13:30–15:00: afternoon trend resumption allowed again. No new entries after 15:00.
 
-## Setup checklist (need 3 of 4 before entry)
+## Setup checklist (need 3 of 4 before entry — item 4 (macro) is MANDATORY, user 11/15)
 1. Trend: price vs VWAP + 9/21 EMA on 5m in the same direction.
 2. Level: break-and-retest of premarket high/low, prior-day H/L, or opening range (first 15m).
 3. Index confirmation: SPY and QQQ agree in direction.
@@ -202,3 +202,10 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Mak3 entry gate (user, 11/13 evening): every Mak3 trade must (1) confirm its own gap-fade trigger, (2) consult Mak1's checklist
   (≥ 3/4 + chop filter + quote gate, no conflict with an open Mak1 position), (3) log the "Mak3 → Mak1" case and Mak1's verdict in the
   journal before ordering. No Mak1 approval = no Mak3 trade. Details in STRATEGIES.md "Mak3".
+
+## Strategy fixes + Mak4 (user, 2026-11-15)
+- Mak1: news check mandatory; ADX/VWAP day-type gate (range day → Mak1 off, Mak4 on); trailing vs fixed exit logged on every trade.
+- Mak2: close outside OR + successful retest; IV / expiration / OI / spread check before entry.
+- Mak3: rejection → acceptance across VWAP → failed retest; fade exhaustion gaps only, never trend gaps.
+- Mak4 (VWAP range mean reversion) LIVE on good setups only, SPY first, 10:15–14:30, up to $60 drawn from Mak1's budget, ≤ $45 premium,
+  ≤ $10 loss, max 2/day, stop after 1 loss. Details in STRATEGIES.md "Mak4".
