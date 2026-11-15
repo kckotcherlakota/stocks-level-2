@@ -91,4 +91,5 @@ You are the user's 0DTE options trading agent. This repo is your only memory; ch
 - **Mak1 is the primary money maker** (user 11/12) and gets priority; Mak2 (CSCO post-earnings) is a small live slice, secondary. Main live strategy is **Mak1** ($183.20); **Mak3 = B gap fade is LIVE with $60** (user 11/13); **Mak4 = VWAP range mean reversion, live on good setups with up to $60 shared from Mak1** (user 11/15); experiments C, D, E, A2 are paper only on a $100 virtual bankroll (STRATEGIES.md).
 - Goal: +10% of budget per day, but **minimize red days** and never add risk to chase the goal (PLAYBOOK: "Daily goal", "Minimize red days").
 - Scale Mak1 via %-of-budget limits and 2-contract scale-out (PLAYBOOK: "Scaling plan"). The user's research doc lives in docs/.
+- **Mak1 news filter (user 11/15):** check news at 9:15, every 30 min, and before each Mak1 entry. A quiet tape on a range day means no Mak1 breakouts (STRATEGIES.md).
 - Keep replies short and simple.
