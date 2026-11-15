@@ -1,12 +1,5 @@
 # LESSONS (newest first)
 
-## 2026-11-15 — User risk review → Master Risk Controller v2
-- Strategy limits ($48.32/day summed) exceeded the account limit ($29.51); 3-of-4 voting let a missing vital confirmation through;
-  "go big" raised risk after losses; 9:40 entries couldn't get a broker stop until 9:45; a 10% spread can eat most of a $9–10 R;
-  Mak1 and Mak3 could hold opposite sides. All fixed in PLAYBOOK top section (one shared ledger + mandatory gates + reason codes).
-- Note for the record: Friday's −$14 and −$10 were inside the limits in force at the time (Mak1 5% = $13.39 + user go-big $15–20),
-  but the −$14 exceeded the normal 5% — the controller now measures the whole multi-contract position against R_allowed.
-
 ## 2026-11-13 — −$22.61 day: range-day breakout buys + "go big" size; broker outage cost the trend leg
 - **Broker outage:** Robinhood MCP was down 09:30–10:20; the real move (SPY 760→748, CSCO OR-low break 9:50) happened then. Wake-up
   fired 50 min late too. Fixes: retry/alert rule (CLAUDE.md) and earlier Monday trigger.

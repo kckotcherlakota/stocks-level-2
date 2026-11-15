@@ -4,17 +4,17 @@
 - **Agent budget: $295.12** ($317.73 − $22.61 on 11/13). Profits/losses from agent trades change it.
   - **Mak1 budget: $183.20** ($243.20 − $60 to Mak3, user 11/13). Limits: 5% = $9.16 loss/trade, 10% = −$18.32/day, 20% = −$36.64/week;
     premium cap 25% ≈ $46; A+ cap 45% ≈ $82; A+ Conviction loss 7.5% ≈ $13.74.
-  - **Mak3 budget: $60.00** (gap fade = strategy B) — **PAPER until validated** (Controller v2); allocation idle. ≤ $45 premium, ≤ $10 loss, −$15/day, max 2/day, 9:45–11:00, pause at $30.
+  - **Mak3 budget: $60.00** (gap fade = strategy B, LIVE from 11/16). ≤ $45 premium, ≤ $10 loss, −$15/day, max 2/day, 9:45–11:00, pause at $30.
   - **Mak2 budget: $51.92** ($50 + $1.92). Per trade ≤ $40 premium, ≤ $10 loss, −$15/day, max 2/day, stop after 1 loss.
 - **Cash floor (never go below): $3.48.** Account cash $298.60 (EOD 11/13) = budget $295.12 + floor $3.48 ✓.
-- Combined agent stops: −10%/day of total ($29.51), −20%/week ($59.02) — **override every strategy limit** (Controller v2). 2 losses any strategy → shutdown.
-- Entry window 9:45–14:45 ET; flat by 15:15 ET (Controller v2).
+- Combined agent stops: −10%/day of total ($29.51), −20%/week ($59.02).
 - Open positions: none. Open orders: none (checked 14:12 ET 11/13). No orders from other agents seen 11/11–11/13.
 - **Week of 2026-11-09 agent P&L: +$21.40** (Mon −$9.54; Tue +$39.73; Wed +$26.91; Thu −$13.09; Fri −$22.61). Other agent: −$7.09 (Tue).
   Weekly target $150 → missed by $128.60. **Two red days in a row (Thu, Fri).**
 - **Friday step-up review (11/13):** week positive (+$21.40), max drawdown from the week's peak (+$57.10 Wed → +$21.40) ≈ 11% of budget
   → borderline; keep the % rules (sizes scale down with the smaller budget). No size increase next week.
-- **Go-big rule: REMOVED** (Controller v2, 11/15). Never increase size after a loss.
+- **Go-big rule (user 11/13):** size override allowed only on/after 2 red days. Mon 11/16 qualifies (Thu+Fri red) — but only on a
+  valid A/A+ setup, max loss $15/trade, inside the combined daily stop. LESSONS 11/13: don't use it for breakout buys in a range.
 - Paper bankroll for experiments: $100.00 (no paper trades logged; B/C/E had no qualifying signals 11/13).
 - Scans: every 2 min when flat; 30 s with money at work. Exit if 2 of 3 indexes lose the breakout / VWAP (LESSONS 11/12, 11/13).
 - ⚠️ 11/13: Robinhood + other MCPs failed to connect until ~10:20 ET (502). New rule in CLAUDE.md: retry in 1–2 min, then email alert.
