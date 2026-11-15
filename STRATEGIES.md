@@ -7,7 +7,7 @@ User: "We should parallel try other strategies while this [main] remains our mai
 
 **Mak1 fixes (user 11/15):**
 - **Economic-news check is MANDATORY** (not one of the 3-of-4): no entry within 30 min before a scheduled release (CPI, FOMC, jobs, Fed speakers).
-- **Day-type gate (trend vs range):** classify on 15-min bars with ADX(14) + VWAP slope before every entry.
+- **Day-type gate (trend vs range):** classify on 10-min bars with ADX(14) (Robinhood has no 15-min interval) + VWAP slope before every entry.
   Trend day = ADX ≥ 25 and rising, VWAP sloped, price mostly on one side of VWAP → Mak1 allowed.
   Range day = ADX < 20, VWAP flat (last 30 min), repeated VWAP crosses → **Mak1 breakout/VWAP-break entries blocked; hand off to Mak4.**
   ADX 20–25 = uncertain → Mak1 only A+ setups.
@@ -24,13 +24,13 @@ Mak2 is secondary and must never take budget or attention from a live Mak1 setup
 - **Budget:** up to **$60 drawn from Mak1's $183.20** (shared pool, not new money). Mak4 losses count against Mak1's daily (−$18.32) and
   weekly limits. Per trade: premium ≤ $45, max loss $10 (broker stop sized to it), max 2 Mak4 trades/day, stop Mak4 after 1 loss.
 - **Market / time:** SPY first (QQQ only as a separate test, never both at once). 10:15–14:30 ET.
-- **Regime (ALL mandatory):** ADX(14) on 15-min < 20 and not rising sharply; VWAP roughly flat over the last 30 min; a clear range with
+- **Regime (ALL mandatory):** ADX(14) on 10-min < 20 (no 15-min interval on Robinhood) and not rising sharply; VWAP roughly flat over the last 30 min; a clear range with
   support and resistance each tested before; no major release coming. Avoid expanding Bollinger bands, rising ADX, trend days.
 - **Setup used live:** range rejection + VWAP return. Call: price at range support / lower Bollinger band (20,2) → bullish rejection candle
   → RSI(14) was < 35 and turns up. Put: mirror at resistance / upper band with RSI > 65 turning down.
 - **Entry / exit:** enter on the confirming candle close; stop beyond the rejected support/resistance; target VWAP; reward ≥ 1.5:1 to VWAP
   after estimated costs (option-level, not share-level) or skip. Exit early if the reversal fails. No averaging down. Quote gate as Mak1.
-- **Paper side-tests (log only):** failed-breakout fakeout, VWAP 1σ/2σ deviation snapback, double-test retest, and a simple version
+- **Paper side-tests (log only):** failed-breakout fakeout, VWAP 1σ/2σ deviation snapback (bands computed by hand from 5-min bars — not a Robinhood indicator), double-test retest, and a simple version
   (levels + VWAP only, no ADX/BB/RSI). Keep the extra indicators only if they improve net results after costs.
 - **Conflicts:** Mak1 and Mak4 never hold opposite directions on the same underlying. On a trend day (Mak1 regime) Mak4 is off.
 - Record (Mak4): —
