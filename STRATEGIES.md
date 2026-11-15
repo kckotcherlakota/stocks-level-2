@@ -3,18 +3,20 @@
 User: "We should parallel try other strategies while this [main] remains our main working one."
 
 ## Main (live) — **Mak1** (user's name, 11/11): the ONLY live strategy and it has the COMPLETE budget
-**Mak1 (A). Index-agreement 0DTE** — SPY/QQQ/IWM all agree; opening-range break or VWAP loss/hold; 9:40–11:00 and 13:30–15:00.
+**Mak1 (A). Index-agreement 0DTE** — SPY/QQQ/IWM all agree; opening-range break or VWAP loss/hold; 9:45–11:00 and 13:30–14:45 (Controller v2).
 Rules in PLAYBOOK. Record: 11/09 -9.54, 11/10 +39.73, 11/11 +26.91, 11/12 -13.09.
 
 
 **Priority (user 11/12): Mak1 is the PRIMARY money maker.** Mak1 setups always come first (attention, budget, monitoring);
 Mak2 is secondary and must never take budget or attention from a live Mak1 setup or position.
 
-## Mak3 (LIVE, user 11/13 evening: "Bring up B as mak3 and share 60$ from mak1") — Gap fade on SPY/QQQ/IWM
+## Mak3 (**PAPER** under Controller v2, 11/15 — was LIVE 11/13 evening: "Bring up B as mak3 and share 60$ from mak1") — Gap fade on SPY/QQQ/IWM
 - **Budget: $60** (moved from Mak1). Own P&L adds to / subtracts from its $60. If it falls to $30, pause Mak3 and ask the user.
 - Note: promoted with 0 paper trades — user's explicit choice; treat the first 10 trades as the validation sample and report the record.
-- **Trigger (strategy B):** index gaps ≥ 0.7% vs prior close; after 9:45 price fails at the OR high (gap up → put) / OR low (gap down → call)
-  AND loses (or reclaims) VWAP. Prefer agreement of all 3 indexes; trade the one with the cleanest failure.
+- **Trigger (strategy B, tightened v2 per research doc):** gap ≥ 0.7% vs prior close is only a filter. After 9:45: completed rejection at the
+  OR high (gap up) → 5-min close below VWAP → confirmed lower high → break below the rejection candle's low → put (mirror for gap-down call).
+  Stop above the rejection swing high. Target VWAP if not yet crossed, else support / prior close; skip if target distance doesn't pay after costs.
+  Never fade a confirmed Mak1 trend (DIRECTION_CONFLICT). Prefer agreement of all 3 indexes; trade the one with the cleanest failure.
 - **Vehicle:** 0DTE put/call, delta ~0.30–0.45, quote gate (spread ≤ 10% of mid, ≤ $0.15).
 - **Limits:** premium ≤ $45, max loss $10/trade (broker stop sized to it), −$15/day for Mak3, max 2 Mak3 trades/day, stop after 1 loss.
   Window 9:45–11:00 only. Counts toward the combined agent daily/weekly stops.
@@ -45,6 +47,9 @@ Mak2 is secondary and must never take budget or attention from a live Mak1 setup
 - Contract: nearest weekly (11/13 or next Fri), |delta| 0.35–0.45, spread ≤ 5% of mid (PLAYBOOK single-name rule), nonzero bid.
 - Exits: stop = 5-min close back inside the OR (plus broker disaster stop sized so loss ≤ $10); take profit +30–50% at bid − 0.01;
   time stop 30 min; flat by 11:00 ET on day one (morning-only test).
+- **Controller v2 additions (11/15):** exits use the stock's own invalidation (back inside the OR / below the breakout candle low), NOT the
+  2-of-3 index rule. Require same-time volume above normal (RVOL > 1.5 vs prior 10 sessions' same-minute volume, best effort). Earnings
+  spread check ≤ 5% of mid AND spread-cost test (Controller §2). 2nd Mak2 trade sized to the remaining Mak2 day room ($15 − losses so far).
 - Max 2 Mak2 trades/day; stop after 1 loss.
 - Record (Mak2): 11/13 NU 11/20 13C 1× 0.39→0.41 **+$1.92** (time stop). CSCO 9:50 signal missed (broker offline); CRWV/INTC/CSCO-put skipped (spreads 7–30%). Slice $51.92.
 - MakB/MakC live-for-a-day (11/13, user): no qualifying signal (no 0.7% gap; VWAP touches never gave a clean rejection on all 3).

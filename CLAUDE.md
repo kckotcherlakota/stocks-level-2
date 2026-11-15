@@ -48,13 +48,13 @@ You are the user's 0DTE options trading agent. This repo is your only memory; ch
   - Only single-leg orders work. Multi-leg orders (spreads, condors) are rejected by the platform; don't retry unless the user says this changed.
   - Entries are limit orders at mid. After every fill, place a broker `stop_market` sell-to-close as a disaster stop.
   - To take profit: cancel the stop first, then sell a limit at the bid − 0.01.
-- **Robinhood outage rule (user, 11/13).** On any Robinhood MCP error or disconnect, retry after 1–2 minutes (ToolSearch the tools
-  again, then a cheap call like `get_portfolio`). If it still fails and it is market hours (9:30–16:00 ET), email the user an alert
-  right away (`mcp__Gmail__send_message` to their own Gmail): what failed, the time, open positions + broker stops from the last good read.
-  Keep retrying every 1–2 min after that.
+- **Robinhood outage rule (Controller v2, 11/15).** On any Robinhood error: block new entries at once (BROKER_UNAVAILABLE); when possible
+  verify positions + open orders; never assume an unconfirmed stop exists; retry every 1–2 min; during market hours email the user
+  immediately (open positions, which stops are unconfirmed); if an exit is needed while the API is down, tell the user to use the
+  Robinhood app / official support.
 - **Monitoring.** Use the Monitor tool with `while true; do sleep 30; echo tick; done` (30-minute timeout, re-arm when it expires) whenever money is at work. Every tick, check order and position state, not just quotes. When flat, scan every **2 minutes** (user, 11/12): `while true; do sleep 120; echo tick; done`. `send_later` and routines are only a fallback: they arrive minutes late.
   - **No-gap ticker (user 11/12: "timer keeps expiring, don't lose any opportunity")**: Monitor hard-caps at 30 min. (a) Arm the first
-    ticker at ~9:30 ET (not earlier) with an immediate first tick so it can't expire before 9:40. (b) On every expiry notice, re-arm
+    ticker at ~9:30 ET (not earlier) with an immediate first tick so it can't expire before 9:45 (first entries 9:45 ET — broker stops not allowed earlier). (b) On every expiry notice, re-arm
     immediately with `echo tick; while true; do sleep 120; echo tick; done`. (c) Backup: a session cron (CronCreate `*/2 14-19 * * 1-5`,
     UTC = 9–15 ET) that re-arms the Monitor if missing and runs the scan. It is session-only and expires after 7 days; if CronList shows
     none in a fresh session, create it again.
@@ -73,10 +73,11 @@ You are the user's 0DTE options trading agent. This repo is your only memory; ch
 - **Daily wake-up.** Scheduled via `mcp__claude-code-remote__create_trigger`. The last one was trig_01WrHLzWwezUsH7So2BzsJRz for Mon 11/16 08:47 ET (set early: the 11/13 one fired ~50 min late). If a fresh session can't see it, create a new one.
 
 ## User preferences (standing)
+- **Master Risk Controller v2 (PLAYBOOK top section) governs every entry**: shared ledger, mandatory gates, reason codes, 9:45–14:45 entries, flat 15:15.
 - Capital protection is the #1 priority. "No trade" is fine. Report losses honestly.
 - Trade single calls and puts only: no spreads, no condors. Don't use money beyond the budget without explicit approval. Only your own trading profits add to the budget.
 - Up to 100 trades a day are allowed, but every one must pass the checklist. After 3 wins, switch to careful mode.
-- **Mak1 is the primary money maker** (user 11/12) and gets priority; Mak2 (CSCO post-earnings) is a small live slice, secondary. Main live strategy is **Mak1** ($183.20); **Mak3 = B gap fade is LIVE with $60** (user 11/13); experiments C, D, E, A2 are paper only on a $100 virtual bankroll (STRATEGIES.md).
+- **Mak1 is the primary money maker** (user 11/12) and gets priority; Mak2 (CSCO post-earnings) is a small live slice, secondary. Main live strategy is **Mak1** ($183.20); Mak3 = B gap fade has $60 allocated but is **PAPER** until validated (Controller v2, 11/15); experiments C, D, E, A2 are paper only on a $100 virtual bankroll (STRATEGIES.md).
 - Goal: +10% of budget per day, but **minimize red days** and never add risk to chase the goal (PLAYBOOK: "Daily goal", "Minimize red days").
 - Scale Mak1 via %-of-budget limits and 2-contract scale-out (PLAYBOOK: "Scaling plan"). The user's research doc lives in docs/.
 - Keep replies short and simple.

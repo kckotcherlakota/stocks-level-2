@@ -1,5 +1,50 @@
 # PLAYBOOK — hard rules (capital protection first)
 
+## ⛔ MASTER RISK CONTROLLER v2 (user review, 2026-11-15) — OVERRIDES every older section below when they conflict
+One shared controller for Mak1/Mak2/Mak3; each strategy keeps its own entry logic. Every candidate gets one decision, logged in the
+journal with a reason code: **TRADE_ALLOWED / TRADE_BLOCKED / REDUCED_RISK / SHUTDOWN**.
+Reason codes: CHOP_VWAP_CROSSES, LEVEL_FAILED_TWICE, INDEX_DISAGREEMENT, DAILY_RISK_EXCEEDED, WEEKLY_RISK_EXCEEDED, STRATEGY_RISK_EXCEEDED,
+TRADE_RISK_EXCEEDED, SPREAD_COST_TOO_HIGH, DIRECTION_CONFLICT, OUTSIDE_WINDOW, TOO_EXTENDED, BROKER_UNAVAILABLE, STALE_DATA, MACRO_EVENT,
+SHUTDOWN_TWO_LOSSES.
+
+**1. Shared risk ledger (account-wide limits override every strategy limit).**
+- Account: budget $295.12 (cash $298.60 − floor $3.48 — the floor is already outside the budget). Daily stop **−$29.51**, weekly **−$59.02**.
+- Before every entry: **R_allowed = min(R_trade, R_strategy_remaining, R_daily_remaining, R_weekly_remaining)**, where remaining =
+  limit − (realized loss + open risk) for that bucket. Planned R = whole position: qty × 100 × (fill − stop) + est. stop slippage + fees.
+- If even **1 contract** doesn't fit R_allowed → TRADE_BLOCKED. Never switch to a cheaper/worse strike just to make it fit.
+- **2 losing trades in a day (any strategies combined) → SHUTDOWN** for the day.
+- **Never increase size after a loss.** The "go big after 2 red days" override is **REMOVED**.
+
+**2. Mandatory gates (not part of a 3-of-4 vote — each must pass).**
+- Risk fits (above). Regime ≠ chop: **≤ 2 VWAP crosses in the last 12 five-minute bars on the traded index, strict, no exceptions**;
+  a new setup label never resets the count. Mak1/Mak3: **SPY, QQQ and IWM all confirm** the direction.
+- Quote gate (spread ≤ 10% of mid and ≤ $0.15, quote < 10 s) **and spread-cost test: (ask − bid)/2 × 100 × qty ≤ 25% of planned R**
+  → else SPREAD_COST_TOO_HIGH.
+- Macro: no entry within 30 min of a scheduled release.
+- The remaining checklist items (EMA 9/20 alignment, level) still need ≥ 3/4 overall.
+
+**3. Direction / thesis lockout.** One net direction per index family (SPY/QQQ/IWM) at a time. No strategy may open a position opposite to
+an open position, or opposite to a confirmed Mak1 trend. Same-direction positions across strategies count as ONE idea for risk.
+
+**4. Time rules (Robinhood: new option stop-market orders only from 9:45 ET; no OCO/bracket for options).**
+- First option entries **9:45 ET** (every entry must get its broker stop immediately). No new entries after **14:45**.
+  **Mandatory flat by 15:15 ET** (Robinhood may auto-liquidate expiring options in the last 30 min). Verify flat via positions, not orders.
+- Stop-market fills are not guaranteed → size R with slippage. Taking profit: cancel stop → sell limit; **if the sell doesn't fill in
+  ~30 s, re-place the stop at once** — never leave a position without a confirmed stop.
+
+**5. Breakout discipline (Mak1).** After a level fails twice (close above then back inside within 2 bars) → LEVEL_FAILED_TWICE lockout
+for breakout buys at that level for the day (provisional; review weekly). Max entry distance beyond the breakout level: 0.10% of
+the underlying (≈ $0.75 SPY, $0.68 QQQ, $0.28 IWM) → else TOO_EXTENDED. Retest entries and "afternoon only with the morning trend"
+are **paper-tested first** (log them; don't trade them live yet).
+
+**6. Broker outage.** On any Robinhood error: **block new entries immediately (BROKER_UNAVAILABLE)**; when possible verify positions and
+open orders; never assume an unconfirmed stop exists; retry every 1–2 min; email the user at once during market hours with what is
+open and what is unconfirmed; if a position must be exited and the API is down, tell the user to use the Robinhood app / official support.
+
+**7. Strategy status under v2.** Mak1 LIVE (entries 9:45–11:00 and 13:30–14:45). Mak2 LIVE with stock-specific rules (STRATEGIES).
+**Mak3 = PAPER until validated** (its $60 stays allocated but idle). Mak1 per-trade R: ≤ $9.16 (5% of $183.20) — whole position.
+
+
 ## Account
 - Only tradable account: Robinhood agentic account ••••8852 (limited margin, options level 3).
 - Other accounts are read-only to the agent; never touch them.
@@ -33,7 +78,7 @@
   (set the stop so qty × (entry − stop) ≤ $15), -$30/day, -$60/week, careful mode after 3 wins, profit lock.
 - Bigger size never means weaker setups or wider stops. Take profits fast (+30–50%, sell at bid − 0.01).
 - **Premium cap raised to $150/trade for A+ setups only** (user, 11/11 ~12:25 ET: "if you're sure, you can double to $150").
-  A+ = all 4 checklist items AND all 3 indexes (SPY/QQQ/IWM) agree, in the 9:40–11:00 or 13:30–15:00 window.
+  A+ = all 4 checklist items AND all 3 indexes (SPY/QQQ/IWM) agree, in the 9:45–11:00 or 13:30–14:45 window (v2).
   Max loss per trade stays $15 (so a $150 position needs a stop ≤ 10% away — only when an underlying level allows it).
   Not used in careful mode (half size there). Other setups: ≤ $75.
 
@@ -62,7 +107,7 @@
 ## Daily goal (user, 2026-11-11 evening)
 - User: "Mak1 needs to make at least 10% per day … not telling you to risk the capital; it is core importance to protect it at all costs."
 - **Goal: +10% of budget per day (≈ $33 at $330.82). It is a target, NOT a reason to force trades or loosen any limit.**
-- How to reach for it without more risk: take every setup that passes the checklist in BOTH windows (9:40–11:00, 13:30–15:00);
+- How to reach for it without more risk: take every setup that passes the checklist in BOTH windows (9:45–11:00, 13:30–14:45 — v2);
   use full allowed size on A/A+ setups (2-contract scale-out); let winners run with the % trailing stop instead of
   capping at +30%; use 2 positions when all 3 indexes agree.
 - Once the day reaches +10%: profit lock at 70% of the day's peak (same as careful mode). Keep trading only A+ setups.
@@ -89,8 +134,8 @@
 | Max trades/day | 100 (user 11/09: squeeze every opportunity) — but every trade must still pass the setup checklist; no revenge or boredom trades |
 | After 3 winning trades in a day (user 11/09) | "Careful mode": A+ setups only (all 4 checklist items), size ≤ half of normal (≤ ~$25), profit-lock tightens to 70% of the day's peak, and stop for the day after the first loss in careful mode |
 | Weekly drawdown kill switch | -$60 for the week (20%) → stop until next Monday, review |
-| No new 0DTE entries after | 3:00 PM ET; flat on all 0DTE by 3:45 PM ET |
-| No entries | first 10 min after open (9:30–9:40) unless a clear gap setup; not in the minute of FOMC/CPI |
+| No new 0DTE entries after | 2:45 PM ET; flat on all 0DTE by 3:15 PM ET (v2) |
+| No entries | before 9:45 ET (v2: broker stops only from 9:45); after 14:45; not within 30 min of FOMC/CPI |
 | Never | market orders on options, naked short options, averaging down, holding 0DTE into the close |
 
 ## Reality check (written 2026-11-09)
@@ -116,7 +161,7 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   Prefer IWM (cheaper strikes, ~0.30 delta for ≤$0.40) over far-OTM SPY/QQQ.
 
 ## Time-of-day rule (11/09)
-- 9:40–11:00: trend entries OK (breakouts, flags, re-entries).
+- 9:45–11:00: trend entries OK (v2: breakouts within 0.10% of the level, flags, re-entries).
 - 11:00–13:30 (midday): no buying at HOD/LOD. Only VWAP pullback-and-hold or VWAP-loss setups.
   Scan every 10 min. Exit any position that stalls 8–10 min.
 - 13:30–15:00: afternoon trend resumption allowed again. No new entries after 15:00.
@@ -190,11 +235,11 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Update (user, 11/13 ~13:30 ET): "If mak1 is good to go go big on it and skip mak2 risk" → Mak2 CSCO put CANCELLED.
   Mak1 13:30 breakout call (if triggered): 2 contracts (scale-out), premium ≤ $120, max loss ≤ $20 (A+ tier size, user-approved for
   this trade even though the news backdrop is bearish); overrides the half-size first-trade rule for this trade only.
-- Standing rule (user, 11/13 ~13:52 ET): "Override applied only on go big on or after 2 red days" → the "go big" size override
+- ~~REMOVED by Controller v2 (11/15)~~ Standing rule (user, 11/13 ~13:52 ET): "Override applied only on go big on or after 2 red days" → the "go big" size override
   (Mak1: 2 contracts, ≤ $120 premium, ≤ $15 loss/trade, still inside the combined daily stop; valid setups only) may be used only
   when the 2 previous/most recent trading days were red (e.g., 11/12 −$13.09 and 11/13 −$12 so far). Otherwise normal post-loss rules.
 
-## Mak3 = strategy B live (user, 2026-11-13 evening)
+## Mak3 = strategy B (user, 2026-11-13 evening) — **back to PAPER under Controller v2 (11/15)**
 - User: "Bring up B as mak3 and share 60$ from mak1." → Gap fade goes LIVE as **Mak3** with **$60** taken from Mak1.
 - Budgets after the move: Mak1 $183.20, Mak2 $51.92, Mak3 $60.00 → total $295.12 (unchanged). Cash floor $3.48.
 - Mak3 limits: premium ≤ $45, loss ≤ $10/trade, −$15/day, max 2/day, stop after 1 loss, 9:45–11:00, pause at $30. Rules in STRATEGIES.md.
