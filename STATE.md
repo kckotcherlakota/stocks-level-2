@@ -1,25 +1,19 @@
 # STATE
 
-- Last updated: 2026-11-15 (Sun) roll-up. No trading since 11/13 EOD; account flat, ready for Mon 11/16 (prep in journal/2026-11-16.md).
-- **Agent budget: $295.12** ($317.73 − $22.61 on 11/13). Profits/losses from agent trades change it.
-  - **Mak1 budget: $183.20** ($243.20 − $60 to Mak3, user 11/13). Limits: 5% = $9.16 loss/trade, 10% = −$18.32/day, 20% = −$36.64/week;
-    premium cap 25% ≈ $46; A+ cap 45% ≈ $82; A+ Conviction loss 7.5% ≈ $13.74.
-  - **Mak4 (VWAP range mean reversion):** up to $60 drawn from Mak1's $183.20 (shared, not new money); live on good setups only. **LIVE from Mon 11/16** (range days, SPY first, 10:15–14:30).
-  - **Mak3 budget: $60.00** (gap fade = strategy B, LIVE from 11/16). ≤ $45 premium, ≤ $10 loss, −$15/day, max 2/day, 9:45–11:00, pause at $30.
-  - **Mak2 budget: $51.92** ($50 + $1.92). Per trade ≤ $40 premium, ≤ $10 loss, −$15/day, max 2/day, stop after 1 loss.
-- **Cash floor (never go below): $3.48.** Account cash $298.60 (EOD 11/13) = budget $295.12 + floor $3.48 ✓.
-- Combined agent stops: −10%/day of total ($29.51), −20%/week ($59.02).
-- Open positions: none. Open orders: none (checked 14:12 ET 11/13). No orders from other agents seen 11/11–11/13.
-- **Week of 2026-11-09 agent P&L: +$21.40** (Mon −$9.54; Tue +$39.73; Wed +$26.91; Thu −$13.09; Fri −$22.61). Other agent: −$7.09 (Tue).
-  Weekly target $150 → missed by $128.60. **Two red days in a row (Thu, Fri).**
-- **Friday step-up review (11/13):** week positive (+$21.40), max drawdown from the week's peak (+$57.10 Wed → +$21.40) ≈ 11% of budget
-  → borderline; keep the % rules (sizes scale down with the smaller budget). No size increase next week.
-- **Go-big rule (user 11/13):** size override allowed only on/after 2 red days. Mon 11/16 qualifies (Thu+Fri red) — but only on a
-  valid A/A+ setup, max loss $15/trade, inside the combined daily stop. LESSONS 11/13: don't use it for breakout buys in a range.
-- Paper bankroll for experiments: $100.00 (no paper trades logged; B/C/E had no qualifying signals 11/13).
-- Scans: every 2 min when flat; 30 s with money at work. Exit if 2 of 3 indexes lose the breakout / VWAP (LESSONS 11/12, 11/13).
-- ⚠️ 11/13: Robinhood + other MCPs failed to connect until ~10:20 ET (502). New rule in CLAUDE.md: retry in 1–2 min, then email alert.
-- ⚠️ 11/13: the scheduled wake-up fired ~50 min late (09:55 vs 09:05 ET). Monday's wake-up set earlier to compensate.
-- ⚠️ 11/10 11:04–11:11 ET: ANOTHER agent traded this account (SPY 753C, ≈ −$7.09). None seen since. Keep checking get_option_orders.
-- New 11/15: Mak1 news filter for sideways markets. Tag each check CATALYST, QUIET or RISK; QUIET + range = no Mak1 breakouts (STRATEGIES.md).
-- Wake-up trigger trig_01WrHLzWwezUsH7So2BzsJRz is set for Mon 11/16 08:47 ET. No session cron exists; create it in Monday's session.
+- Last updated: 2026-11-16 (Mon) EOD roll-up. Flat, no open orders (checked 15:30 ET).
+- **Agent budget: $337.85** ($295.12 + $42.73 on 11/16). Profits/losses from agent trades change it.
+  - **Mak1 budget: $225.93** ($183.20 + $42.73; Mak4's +$69 is booked here because Mak4 trades on Mak1's money).
+    Limits: 5% = $11.30 loss/trade, 10% = −$22.59/day, 20% = −$45.19/week. Premium cap: up to the whole Mak1 budget (user 11/16);
+    loss per trade is still set by the stop.
+  - **Mak4 (VWAP range / capitulation reversion):** LIVE, runs in parallel with Mak1, up to $60 of Mak1's money, ≤ $10–15 loss.
+  - **Mak3 budget: $60.00** (gap fade). ≤ $45 premium, ≤ $10 loss, −$15/day, max 2/day. No trades yet.
+  - **Mak2 budget: $51.92.** ≤ $40 premium, ≤ $10 loss. 11/16 scan: every mover's options were too wide or too expensive.
+- **Cash floor (never go below): $3.48.** Account cash $341.33 = budget $337.85 + floor $3.48 ✓.
+- Combined agent stops: −10%/day of total ($33.79), −20%/week ($67.57).
+- **Week of 2026-11-16 agent P&L: +$42.73** (Mon +$42.73). Weekly target $100 → $57.27 to go. Last week (11/09): +$21.40 (broker +$16 incl. the other agent).
+- Red-day streak broken (Thu, Fri red; Mon green). Go-big rule is no longer active.
+- **New rules 11/16:** full-session scanning of all 4 strategies 9:30–15:45 (no new 0DTE entries after 15:30); no chasing (one limit at mid,
+  skip if missed); on a green day stop if P&L falls back to half its peak; caution with capital (user).
+- Wake-up: trig_01Fdj148LfCpMR1mtiqbQjWU for Tue 11/17 08:47 ET. Session cron backup ea3f36db (session-only; recreate if missing).
+- Tue 11/17: retail sales + import/export prices 8:30 ET; **NVDA earnings after the close** (QQQ caution late, gap risk Wed).
+- ⚠️ 11/10: ANOTHER agent traded this account (SPY 753C, ≈ −$7.09). None since. Keep checking get_option_orders.

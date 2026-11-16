@@ -1,5 +1,16 @@
 # LESSONS (newest first)
 
+## 2026-11-16 — +$42.73: lost twice on breakdown puts, won on the capitulation bounce
+- **Pick the trending index, not the cheap one.** IWM 274P (−$12): IWM was the one the day-type gate rated RANGE, and it bounced
+  while SPY/QQQ fell. With the premium cap lifted (user), trade SPY/QQQ.
+- **Never chase a missed fill.** Two limits at mid (739P, 737P) missed as the leg ran; the third order on a new strike paid the spike
+  high and the stop hit in 14 s (−$14). If the mid limit misses, the setup is gone: wait for the next bar.
+- **Shorting into oversold reverses.** Every breakdown entry with 5m RSI < 30 bounced within minutes. Skip breakdown puts when RSI < 30.
+- **Capitulation reversion works (Mak4 +$69).** After a fast flush (RSI 13–17, price outside the lower BB), the bounce to the mid-band
+  paid +70%. Trailing the stop in steps (BE at +20%, then ~15% under the bid) and selling into the spike captured it.
+- **Check the true day lows.** At 14:45 I almost called "all 3 at new lows", but QQQ/IWM were well above their 13:35 lows. Compare to LOD.
+- Missed: 14:45–15:00 bounce 738.5 → 740.6 was another Mak4 setup after the window closed. Consider Mak4 to 15:00.
+
 ## 2026-11-13 — −$22.61 day: range-day breakout buys + "go big" size; broker outage cost the trend leg
 - **Broker outage:** Robinhood MCP was down 09:30–10:20; the real move (SPY 760→748, CSCO OR-low break 9:50) happened then. Wake-up
   fired 50 min late too. Fixes: retry/alert rule (CLAUDE.md) and earlier Monday trigger.
