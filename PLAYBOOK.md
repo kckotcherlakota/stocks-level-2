@@ -223,3 +223,5 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 ## Mak4 fired up on user command (user, 2026-11-16 11:40 ET)
 - "Fire up mak4." The user overrides Mak4's ADX < 20 regime gate for today's midday range (SPY has held about 743.3–747.3 around VWAP since 10:20, but ADX still reads 34 from the morning trend).
 - All other Mak4 rules still apply: SPY first; Bollinger Band (20,2) 5-min edge plus a rejection candle plus an RSI turn from 35/65; target VWAP; R:R ≥ 1.5; ≤ $45 premium; ≤ $10 loss; max 2; stop after 1 loss; window ends 14:30; it stays inside the combined daily stop.
+- "In parallel" (user, 11:41): Mak4 runs alongside Mak1, not only when Mak1 is off. It scans SPY, QQQ and IWM, with SPY preferred.
+  Never take a Mak4 trade opposite an open Mak1 trade on the same index. The combined daily stop (−$29.51) caps both together.
