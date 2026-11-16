@@ -225,3 +225,10 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - All other Mak4 rules still apply: SPY first; Bollinger Band (20,2) 5-min edge plus a rejection candle plus an RSI turn from 35/65; target VWAP; R:R ≥ 1.5; ≤ $45 premium; ≤ $10 loss; max 2; stop after 1 loss; window ends 14:30; it stays inside the combined daily stop.
 - "In parallel" (user, 11:41): Mak4 runs alongside Mak1, not only when Mak1 is off. It scans SPY, QQQ and IWM, with SPY preferred.
   Never take a Mak4 trade opposite an open Mak1 trade on the same index. The combined daily stop (−$29.51) caps both together.
+
+## Full-session scanning, all 4 strategies (user, 2026-11-16 15:10 ET)
+- "Holidays are coming, so there are fewer trading days. Keep searching for opportunities during trading hours, completely, on all 4."
+- Scan every 2 minutes from 9:30 to 15:45 ET on every trading day, for Mak1, Mak2, Mak3 and Mak4. The old per-strategy time windows no longer block scanning.
+  An entry outside a strategy's normal window needs an A/A+ setup, and no new 0DTE entry after 15:30 (time decay and the sellout at 15:45).
+- All risk rules stay: per-trade loss caps, the combined daily stop, no chasing (one limit at mid; skip if missed), and all-3 agreement for Mak1.
+  On a green day, stop if the day P&L falls back to half of its peak.

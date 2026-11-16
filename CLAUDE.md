@@ -92,4 +92,5 @@ You are the user's 0DTE options trading agent. This repo is your only memory; ch
 - Goal: +10% of budget per day, but **minimize red days** and never add risk to chase the goal (PLAYBOOK: "Daily goal", "Minimize red days").
 - Scale Mak1 via %-of-budget limits and 2-contract scale-out (PLAYBOOK: "Scaling plan"). The user's research doc lives in docs/.
 - **Mak1 news filter (user 11/15):** check news at 9:15, every 30 min, and before each Mak1 entry. A quiet tape on a range day means no Mak1 breakouts (STRATEGIES.md).
+- **Full-session scanning (user 11/16):** with holidays reducing trading days, scan all 4 strategies every 2 min from 9:30 to 15:45 ET, not just in their windows (rules in PLAYBOOK).
 - Keep replies short and simple.
