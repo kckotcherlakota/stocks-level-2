@@ -11,4 +11,4 @@ F="journal/$DAY.md"
 [ -f "$F" ] || printf '# %s\n\n## Scan log\n| Time | SPY | QQQ | IWM | Note |\n|---|---|---|---|---|\n' "$DAY" > "$F"
 printf '%s\n' "$*" >> "$F"
 echo "logged to $F"
-if [ "$PUSH" = 1 ]; then tools/push.sh "journal $DAY: $(echo "$*" | cut -c1-60)"; fi
+if [ "$PUSH" = 1 ]; then tools/push.sh "journal $DAY: $(echo "$*" | LC_ALL=C tr -cd "[:print:]" | cut -c1-60)"; fi
