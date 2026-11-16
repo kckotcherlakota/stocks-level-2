@@ -219,3 +219,7 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 ## Premium cap lifted for Mak1 (user, 2026-11-16 10:10 ET)
 - "You have money, why IWM, you can use the entire budget." Mak1 may spend up to its whole $183.20 budget on premium for one trade, so it can buy the best contract (SPY/QQQ ATM) instead of a cheaper index.
 - Loss limits do NOT change unless the user says so: per-trade loss is set by the stop (go-big day: max $15), and the daily stops still apply (Mak1 −$18.32, combined −$29.51).
+
+## Mak4 fired up on user command (user, 2026-11-16 11:40 ET)
+- "Fire up mak4." The user overrides Mak4's ADX < 20 regime gate for today's midday range (SPY has held about 743.3–747.3 around VWAP since 10:20, but ADX still reads 34 from the morning trend).
+- All other Mak4 rules still apply: SPY first; Bollinger Band (20,2) 5-min edge plus a rejection candle plus an RSI turn from 35/65; target VWAP; R:R ≥ 1.5; ≤ $45 premium; ≤ $10 loss; max 2; stop after 1 loss; window ends 14:30; it stays inside the combined daily stop.
