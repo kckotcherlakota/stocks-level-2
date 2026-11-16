@@ -215,3 +215,7 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - QUIET + RANGE/UNCERTAIN day-type = sideways: no Mak1 breakouts; Mak4 runs instead.
 - CATALYST: Mak1 is allowed only after the day-type confirms (TREND, or ADX ≥ 20 and rising) and all 3 indexes confirm.
 - RISK: no new Mak1 entries; tighten stops on open trades. Details are in STRATEGIES.md under "Mak1 fixes".
+
+## Premium cap lifted for Mak1 (user, 2026-11-16 10:10 ET)
+- "You have money, why IWM, you can use the entire budget." Mak1 may spend up to its whole $183.20 budget on premium for one trade, so it can buy the best contract (SPY/QQQ ATM) instead of a cheaper index.
+- Loss limits do NOT change unless the user says so: per-trade loss is set by the stop (go-big day: max $15), and the daily stops still apply (Mak1 −$18.32, combined −$29.51).
