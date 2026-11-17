@@ -268,3 +268,9 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   Weekly kill switch (−$67.57) still the backstop; one order per signal, setup/quote/chop rules unchanged.
 - 12:42 user: "If you think we can cover the weekly goal in the rest of the days, you can stop; if you cannot, think." → Decision: **stop trading for
   today** (chop ahead of NVDA, 4 losses). Weekly goal stays the target for Wed–Fri (≈ $114.63 needed from −$14.63). Plan in the journal.
+
+## Mak5 = intraday stock trades (user, 2026-11-17 12:47 ET: "do it across the entire stock universe, buy and sell at profit, while not doing Mak1–4")
+- Long only, whole shares, regular hours, flat by 15:45. Universe: stocks $10–250, day volume > 3M, relative volume > 1.5 (Robinhood scan).
+- Size: up to $250 per trade (agent cash only; floor $3.48 untouched); max loss **$10/trade** via broker stop_market; max 3 trades/day; stop after 2 losses.
+- Setup: a mover above VWAP that pulls back to support/VWAP and holds (no buying spikes at the high); R:R ≥ 1.5 to the high of day; spread ≤ 0.3%.
+- Never while a Mak1–4 position is open; counts toward the weekly kill switch. Same-day round trips count as day trades (no PDT alert seen on 11/17 review).
