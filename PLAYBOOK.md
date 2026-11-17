@@ -252,3 +252,5 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - On a valid entry signal, place the limit at the ASK (marketable limit) when the spread is ≤ $0.03, instead of at mid; otherwise mid + half the spread.
   One order per signal; if it still misses, the setup is gone (no chasing a second, higher price).
 - Pre-arm: when a trigger is 1 bar away, have the contract, a fresh quote and the stop price ready so the order goes out within seconds of the bar close.
+- 11:34 user: "Yes go with HD put, $20 loss cap" → one-time Mak2 exception: HD 11/20 put above the $40 premium cap, max loss $20 (broker stop).
+- Wording fix (fast fills): when the spread is > $0.03, enter at mid + ¼ of the spread (not the full ask); one order per signal.
