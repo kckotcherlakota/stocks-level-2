@@ -321,3 +321,10 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - A loss costs twice what a win earns → only A-setups; a skipped B-setup scores 0, which beats −10,000.
 - Track the running score in STATE.md and the journal EOD summary. Starts Wed 11/18 at 0
   (for reference, Tue 11/17 would have scored 1 × +5,000 and 6 × −10,000 = −55,000).
+- **No negative-point days (user, 2026-11-17).** Day score must end ≥ 0. Agent rules to serve this (no trade = 0 points is always allowed):
+  1. First trade of the day: A+ only (all-3 agreement, clear level, R:R ≥ 2, fresh quote, entry at a retest not a chase).
+  2. Take profit fast: sell 1 contract at +30–50% so a winner is banked green; trail the rest from breakeven.
+  3. After a loss (−10,000), two wins are needed to get back to 0 → keep trading ONLY A-setups at 1 contract (smaller $ risk),
+     and only while the money guards allow (Wed: 2 losses or −$50 = stop; weekly floor −$117.57). Money guards win over points.
+  4. Once the day is ≥ +5,000, stop after any loss would take it below 0 → i.e. with +5,000, take at most one more trade only if A+.
+  - Honest limit: a loss can't be ruled out on any trade; the only guaranteed non-negative day is a no-trade day.

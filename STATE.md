@@ -17,7 +17,7 @@
 - **Wed 11/18 (user 11/17, option 2):** 2 contracts on A-setups only, ≤ $40 loss/trade, scale out 1 at +50%; stop after 2 losses or day −$50 (PLAYBOOK).
 - Wed 11/18: **NVDA reported after the close 11/17** → gap day. Plan in journal/2026-11-17.md (EOD). Also check FMP calendar for data.
 - Wake-up: trigger for Wed 11/18 08:47 ET (see CLAUDE.md). Session cron backup 54e92fbf (session-only; recreate if missing).
-- **Trade score (user 11/17):** +5,000 per green trade, −10,000 per red trade. Running score from Wed 11/18: **0**.
+- **Trade score (user 11/17):** +5,000 per green trade, −10,000 per red trade. Running score from Wed 11/18: **0**. Day score must end ≥ 0 (PLAYBOOK).
 - **Month goal (user 11/17): account to $500 by end of Nov** (from $259.70 = +$240, ≈ +93% in ~9 trading days; Thanksgiving 11/27 closed,
   11/28 half day). Agent view: very unlikely without large losses risk; pursue only via A-setups + scale-out + compounding wins;
   stops and the weekly kill switch stay. The user was told this honestly.
