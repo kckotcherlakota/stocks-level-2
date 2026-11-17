@@ -298,3 +298,11 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   → No stand-down until the weekly goal ($100) is met: scan Mak1–4 and Alpha every 2 min, 9:30–15:45, every day. Capital guards stay:
   per-trade caps ($20 Mak1/Mak4, $10 Mak2), one order per signal, broker stop on every option fill, exits keep the stop live, weekly kill
   switch −$67.57, Alpha flat by 15:50 unless down > 2%. Today's extra guard: stop after one more options loss.
+
+### Mak4 range-edge trades (user, 2026-11-17 14:28 ET: "Go ahead with Mak4 range trades")
+- On a confirmed range day (repeated VWAP rejections, failed breakouts both ways), Mak4 may fade the range EDGES without
+  needing a Bollinger-band break / RSI extreme: CALL when SPY tags the range low and holds (a bar that does not close
+  below it / a higher low); PUT when SPY tags VWAP / range high and is rejected (bar closes back below it).
+- Target: the middle / opposite side of the range. Stop: just beyond the edge, sized so the loss ≤ $20 (Mak4 cap).
+  Broker stop_market right after the fill. Entry at the ask if spread ≤ 0.03. No new 0DTE after 15:30.
+- Never enter mid-range. Premium must fit buying power (≤ BP, keep the cash floor).
