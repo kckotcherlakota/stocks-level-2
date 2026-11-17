@@ -264,3 +264,5 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Still in force: per-trade loss caps (Mak1 $11.30, Mak4 $20, Mak2 $10), every setup/quote/chop rule, no chasing, one order per signal,
   broker stop on every fill, flat by 15:45, no new 0DTE after 15:30, and the **weekly kill switch −20% (−$67.57 for the week)** as the last backstop.
 - Once the week reaches the goal: back to normal rules (profit lock, daily stop).
+- **Update (user, 2026-11-17 12:31 ET): "Raise Mak1 loss cap to $20."** Mak1 max loss per trade = **$20** (broker stop sized to it), same as Mak4.
+  Weekly kill switch (−$67.57) still the backstop; one order per signal, setup/quote/chop rules unchanged.
