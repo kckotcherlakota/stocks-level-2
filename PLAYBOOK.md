@@ -244,3 +244,6 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   and Mak4 may use Mak1's premium allowance (up to the Mak1 budget, so SPY/QQQ near-ATM contracts are allowed) instead of $45.
 - Mak4 and Mak1 losses count against ONE shared Mak1 daily stop (−$22.59) and the combined agent stop (−$33.79). Other Mak4 rules unchanged
   (regime, BB edge + rejection + RSI turn, target VWAP, R:R ≥ 1.5, max 2/day, stop after 1 loss, never opposite an open Mak1 trade).
+- **Update (user, 2026-11-17 10:16 ET): "Raise Mak4 loss cap to $20."** Mak4 max loss per trade = **$20** (broker stop sized to it).
+  Still inside the shared Mak1 daily stop (−$22.59) and the combined stop (−$33.79): one Mak4 loss uses most of the day's room,
+  so after a Mak4 loss the day is done for Mak1/Mak4. Mak4 stays 1 contract, max 2/day, stop after 1 loss, R:R ≥ 1.5.
