@@ -257,3 +257,10 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - 11:58 user: "Look out for Mak1 and Mak4, and cap Mak2 loss to $10." → today's red-day stand-down is overridden for Mak1/Mak4.
   Mak2 max loss back to $10/trade (no more premium exceptions). Combined daily stop −$33.79 still applies (room ≈ $22.6 at −$11.18),
   so any new trade's stop must fit inside the remaining room. Thin single-stock options: also exit by hand when the bid nears the stop.
+
+## Mak1 + Mak4 run until the weekly goal (user, 2026-11-17 12:06 ET)
+- "Mak1 and Mak4 need to run until the weekly goal is reached." → the daily stop (−10%) and the Mak4 max-2-trades/day limit are lifted for Mak1/Mak4
+  while the week is below its target (STATE: $100/week; +$12.46 at 12:06 Tue → $87.54 to go).
+- Still in force: per-trade loss caps (Mak1 $11.30, Mak4 $20, Mak2 $10), every setup/quote/chop rule, no chasing, one order per signal,
+  broker stop on every fill, flat by 15:45, no new 0DTE after 15:30, and the **weekly kill switch −20% (−$67.57 for the week)** as the last backstop.
+- Once the week reaches the goal: back to normal rules (profit lock, daily stop).
