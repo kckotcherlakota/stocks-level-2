@@ -238,3 +238,9 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   not only from 10:15. Early-session BB(20)/RSI(14) on 5-min bars use the prior session's bars for warm-up.
 - All other Mak4 rules still apply: regime check, BB edge + rejection candle + RSI turn, target VWAP, R:R ≥ 1.5, ≤ $45 premium, ≤ $10 loss,
   max 2/day, stop after 1 loss, never opposite an open Mak1 trade on the same index, inside the combined daily stop.
+
+## Mak4 uses Mak1's limits (user, 2026-11-17 10:13 ET)
+- "Mak4 shares same loss cap of Mak1." Mak4's per-trade loss cap = Mak1's (5% of the Mak1 budget: $11.30 at $225.93) instead of $10,
+  and Mak4 may use Mak1's premium allowance (up to the Mak1 budget, so SPY/QQQ near-ATM contracts are allowed) instead of $45.
+- Mak4 and Mak1 losses count against ONE shared Mak1 daily stop (−$22.59) and the combined agent stop (−$33.79). Other Mak4 rules unchanged
+  (regime, BB edge + rejection + RSI turn, target VWAP, R:R ≥ 1.5, max 2/day, stop after 1 loss, never opposite an open Mak1 trade).
