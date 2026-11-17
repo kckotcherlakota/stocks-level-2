@@ -294,3 +294,7 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Update (user, 12:55): "By end of day keep the stocks liquid for the Maks to use the next day, unless we are really bad at losses."
   → Alpha positions are sold by **15:50 ET** every day (limit at bid − 0.01) if P&L is a profit or a small loss (better than −2% from average).
   Only a position down more than 2% is held overnight (then the average-down / recover plan continues). Cancel the GTC target before the EOD sale.
+- Update (user, 12:56): "With Alpha and the Maks, rest only once the weekly goal is met; squeeze every opportunity and save the capital."
+  → No stand-down until the weekly goal ($100) is met: scan Mak1–4 and Alpha every 2 min, 9:30–15:45, every day. Capital guards stay:
+  per-trade caps ($20 Mak1/Mak4, $10 Mak2), one order per signal, broker stop on every option fill, exits keep the stop live, weekly kill
+  switch −$67.57, Alpha flat by 15:50 unless down > 2%. Today's extra guard: stop after one more options loss.
