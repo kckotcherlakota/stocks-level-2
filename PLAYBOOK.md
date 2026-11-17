@@ -282,3 +282,6 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Because losers are held, Alpha buys only names that recover well: liquid large caps (market cap > $20B, day volume > 2M, spread ≤ 0.05%) or broad ETFs,
   bought on a pullback to support/VWAP — never news spikes, biotech pumps or penny stocks.
 - Trade-off (agent note): cash tied up in an underwater Alpha position is not available for Mak1–4 the next morning; I report it in every roll-up.
+- Update (user, 12:50): "...unless the stock is going really bad." → Alpha exception: sell at a loss only when the stock is clearly going bad:
+  (a) down ≥ 5% from entry, or (b) bad company news (downgrade, guidance cut, fraud/legal), or (c) a daily close below its prior-day low after
+  entry with the market not to blame. A broker GTC stop_market sits at −7% as a disaster backstop. Otherwise hold for the profit target.
