@@ -274,3 +274,11 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Size: up to $250 per trade (agent cash only; floor $3.48 untouched); max loss **$10/trade** via broker stop_market; max 3 trades/day; stop after 2 losses.
 - Setup: a mover above VWAP that pulls back to support/VWAP and holds (no buying spikes at the high); R:R ≥ 1.5 to the high of day; spread ≤ 0.3%.
 - Never while a Mak1–4 position is open; counts toward the weekly kill switch. Same-day round trips count as day trades (no PDT alert seen on 11/17 review).
+
+## Alpha = stock buy/sell for profit (user, 2026-11-17 12:48 ET) — replaces the Mak5 draft above
+- "Consider this as Alpha. When we are done with options, focus on buying and selling at a profit. You can use the complete budget, but never sell at a loss."
+- Runs only when Mak1–4 are done for the day (or flat). Size: up to the full agent cash (cash floor $3.48 untouched).
+- **No stop-loss: a position is sold only at a profit** (target +1.5–2% after costs; limit sell). A losing position is held (overnight/multi-day) until it recovers.
+- Because losers are held, Alpha buys only names that recover well: liquid large caps (market cap > $20B, day volume > 2M, spread ≤ 0.05%) or broad ETFs,
+  bought on a pullback to support/VWAP — never news spikes, biotech pumps or penny stocks.
+- Trade-off (agent note): cash tied up in an underwater Alpha position is not available for Mak1–4 the next morning; I report it in every roll-up.
