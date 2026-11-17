@@ -315,3 +315,9 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   (BE at +20%, then ~15% under the bid). Keep the broker stop live; no cancel-then-chase.
 - Wed day guard: stop after 2 losing trades or if the day reaches −$50, whichever comes first. Never break the week floor (−$117.57).
 - Applies to 11/18 only; Thu/Fri sizing goes back to 1 contract / $20 unless the user says otherwise.
+
+### Trade score (user, 2026-11-17 after close)
+- Every good trade (closed green) = **+5,000 points**; every bad trade (closed red) = **−10,000 points**.
+- A loss costs twice what a win earns → only A-setups; a skipped B-setup scores 0, which beats −10,000.
+- Track the running score in STATE.md and the journal EOD summary. Starts Wed 11/18 at 0
+  (for reference, Tue 11/17 would have scored 1 × +5,000 and 6 × −10,000 = −55,000).
