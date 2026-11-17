@@ -306,3 +306,12 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Target: the middle / opposite side of the range. Stop: just beyond the edge, sized so the loss ≤ $20 (Mak4 cap).
   Broker stop_market right after the fill. Entry at the ask if spread ≤ 0.03. No new 0DTE after 15:30.
 - Never enter mid-range. Premium must fit buying power (≤ BP, keep the cash floor).
+
+### Weekly limit raised by $50 + Wed 11/18 sizing (user, 2026-11-17 after close: "Option 2, raise limit by $50")
+- Weekly kill switch for the week of 11/16: **−$117.57** (was −$67.57). Week at −$38.90 → **$78.67 of room**.
+- Goal for Wed 11/18: try to win back today's −$81 on the NVDA gap. No promise: ≈1-in-4 odds, needs a clean trend day.
+- Sizing Wed: **2 contracts** on an A-setup only (Mak1 all-3 trend from the open, or Mak3 gap fade), ATM-ish SPY/QQQ ≈ $1.00–1.40 each,
+  premium ≤ buying power minus the $3.48 floor. Max loss per trade **$40** (structure stop). Scale out: sell 1 at +50%, trail the other
+  (BE at +20%, then ~15% under the bid). Keep the broker stop live; no cancel-then-chase.
+- Wed day guard: stop after 2 losing trades or if the day reaches −$50, whichever comes first. Never break the week floor (−$117.57).
+- Applies to 11/18 only; Thu/Fri sizing goes back to 1 contract / $20 unless the user says otherwise.
