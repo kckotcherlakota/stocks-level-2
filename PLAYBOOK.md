@@ -328,3 +328,7 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
      and only while the money guards allow (Wed: 2 losses or −$50 = stop; weekly floor −$117.57). Money guards win over points.
   4. Once the day is ≥ +5,000, stop after any loss would take it below 0 → i.e. with +5,000, take at most one more trade only if A+.
   - Honest limit: a loss can't be ruled out on any trade; the only guaranteed non-negative day is a no-trade day.
+- **Weekly score must only go up (user, 2026-11-17).** Score resets to 0 every Monday. Each day the running weekly score must be
+  ≥ the previous day's. If a day ends with a lower score than the day before (any negative day), the weekly score drops to **0**.
+  → A red day wipes the whole week's points. The bigger the banked score, the more selective I get (A+ only, 1 contract,
+  stop for the day after the first green trade once the week has banked points).
