@@ -266,3 +266,5 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Once the week reaches the goal: back to normal rules (profit lock, daily stop).
 - **Update (user, 2026-11-17 12:31 ET): "Raise Mak1 loss cap to $20."** Mak1 max loss per trade = **$20** (broker stop sized to it), same as Mak4.
   Weekly kill switch (−$67.57) still the backstop; one order per signal, setup/quote/chop rules unchanged.
+- 12:42 user: "If you think we can cover the weekly goal in the rest of the days, you can stop; if you cannot, think." → Decision: **stop trading for
+  today** (chop ahead of NVDA, 4 losses). Weekly goal stays the target for Wed–Fri (≈ $114.63 needed from −$14.63). Plan in the journal.
