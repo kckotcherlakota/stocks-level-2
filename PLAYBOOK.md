@@ -232,3 +232,9 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   An entry outside a strategy's normal window needs an A/A+ setup, and no new 0DTE entry after 15:30 (time decay and the sellout at 15:45).
 - All risk rules stay: per-trade loss caps, the combined daily stop, no chasing (one limit at mid; skip if missed), and all-3 agreement for Mak1.
   On a green day, stop if the day P&L falls back to half of its peak.
+
+## Mak4 from the open (user, 2026-11-17 08:52 ET)
+- "Look for Mak4 entries as well from start." Mak4 scans from 9:30 and may enter from 9:40 (the no-entries-in-the-first-10-min rule still applies),
+  not only from 10:15. Early-session BB(20)/RSI(14) on 5-min bars use the prior session's bars for warm-up.
+- All other Mak4 rules still apply: regime check, BB edge + rejection candle + RSI turn, target VWAP, R:R ≥ 1.5, ≤ $45 premium, ≤ $10 loss,
+  max 2/day, stop after 1 loss, never opposite an open Mak1 trade on the same index, inside the combined daily stop.
