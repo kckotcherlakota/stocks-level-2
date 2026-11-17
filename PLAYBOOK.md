@@ -287,3 +287,7 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   entry with the market not to blame. A broker GTC stop_market sits at −7% as a disaster backstop. Otherwise hold for the profit target.
 - Update (user, 12:51): "Use Alpha as an additional money maker during choppy days for the Maks." → Alpha's main use: on choppy/range days when Mak1–4
   have no clean setups (sideways rule, VWAP chop), Alpha trades large-cap pullbacks. On trend days the Maks have priority and Alpha stays small or flat.
+- Update (user, 12:53): "Try holding the stock or average instead of a loss." → Alpha **scales in**: buy ~half the Alpha budget first, keep half in cash
+  to average down once at −3% from the first entry (only if there is no bad news and the stock's daily trend is intact). The sell target becomes
+  +1.5% over the average price. Exits at a loss only on bad company news or the broker GTC disaster stop at −10% from the average.
+  (The general "never average down" rule still applies to options/Mak1–4.)
