@@ -1,5 +1,23 @@
 # LESSONS (newest first)
 
+## 2026-11-17 — ≈ −$79 day (1W / 4L options, KHC scratch): pre-NVDA range day; I traded it like a trend day
+- **Pre-earnings (NVDA) afternoons are ranges.** SPY ping-ponged 728–734.5 from 11:30 on; every VWAP reclaim (12:15, 13:25, 14:10)
+  and every breakdown (14:00) reversed within 1–3 bars. Waiting for the retest kept me out of 3 losers (≈ −$45 saved).
+  On a day with a big after-hours catalyst, assume RANGE from 11:00 and only fade edges — or stand down.
+- **Range-edge longs need a FAST bounce or a time stop.** Mak4 732C at support (730.5–730.8): support held on every 5-min close but SPY
+  sat on it for 10 min while IWM made new lows → theta + drift bled 1.33 → 1.12 (−$21) without the level breaking. Rules:
+  (1) require the other indexes to hold too (IWM was making lower lows = no confirmation); (2) time stop: no move toward the target
+  within 5 min → exit at bid − 0.01; (3) on 0DTE after 14:00, theta is ~1¢/min on a $1.30 option — a flat tape is a losing tape.
+- **Stops on thin/single-stock options slip** (HD 332.5P stop 2.29 filled 2.22, −$25 vs −$18 planned). Size for the slippage or skip.
+- **Manual exit = cancel-then-chase cost $7** (736C: stop 0.89, chased down to 0.82). Keep the broker stop live; if exiting by hand,
+  one marketable sell at bid − 0.05, or just let the stop work. The 732C stop (let it work) filled 1¢ past the trigger — fine.
+- **Mid limits miss on fast signals** (two 11:00 Mak4 entries). Fast-fill rule (ask if spread ≤ 0.03) fixed it — the 3rd entry filled
+  and made +$14. Keep it.
+- **Cap/size mismatch:** a valid VWAP-hold call (12:25) was skipped because the $11.30 cap couldn't hold a structure stop. Caps now $20.
+- **Check true day lows before calling a "breakdown"** (repeat of 11/16): I used 730.8 (afternoon low) when the LOD was 727.00.
+- **Alpha v0 (stocks):** KHC scratch (−$0.58), AS bought 31.20 at range-mid and drifted −2% with the market. Large-cap gappers on a
+  red tape drift with SPY; buy Alpha at a support level / after a flush, not mid-range, and not into a risk-off afternoon.
+
 ## 2026-11-16 — +$42.73: lost twice on breakdown puts, won on the capitulation bounce
 - **Pick the trending index, not the cheap one.** IWM 274P (−$12): IWM was the one the day-type gate rated RANGE, and it bounced
   while SPY/QQQ fell. With the premium cap lifted (user), trade SPY/QQQ.
