@@ -285,3 +285,5 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Update (user, 12:50): "...unless the stock is going really bad." → Alpha exception: sell at a loss only when the stock is clearly going bad:
   (a) down ≥ 5% from entry, or (b) bad company news (downgrade, guidance cut, fraud/legal), or (c) a daily close below its prior-day low after
   entry with the market not to blame. A broker GTC stop_market sits at −7% as a disaster backstop. Otherwise hold for the profit target.
+- Update (user, 12:51): "Use Alpha as an additional money maker during choppy days for the Maks." → Alpha's main use: on choppy/range days when Mak1–4
+  have no clean setups (sideways rule, VWAP chop), Alpha trades large-cap pullbacks. On trend days the Maks have priority and Alpha stays small or flat.
