@@ -247,3 +247,8 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - **Update (user, 2026-11-17 10:16 ET): "Raise Mak4 loss cap to $20."** Mak4 max loss per trade = **$20** (broker stop sized to it).
   Still inside the shared Mak1 daily stop (−$22.59) and the combined stop (−$33.79): one Mak4 loss uses most of the day's room,
   so after a Mak4 loss the day is done for Mak1/Mak4. Mak4 stays 1 contract, max 2/day, stop after 1 loss, R:R ≥ 1.5.
+
+## Fast fills (user, 2026-11-17 11:03 ET: "Be quick, we missed 2, that's bad")
+- On a valid entry signal, place the limit at the ASK (marketable limit) when the spread is ≤ $0.03, instead of at mid; otherwise mid + half the spread.
+  One order per signal; if it still misses, the setup is gone (no chasing a second, higher price).
+- Pre-arm: when a trigger is 1 bar away, have the contract, a fresh quote and the stop price ready so the order goes out within seconds of the bar close.
