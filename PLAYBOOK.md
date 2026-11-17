@@ -254,3 +254,6 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
 - Pre-arm: when a trigger is 1 bar away, have the contract, a fresh quote and the stop price ready so the order goes out within seconds of the bar close.
 - 11:34 user: "Yes go with HD put, $20 loss cap" → one-time Mak2 exception: HD 11/20 put above the $40 premium cap, max loss $20 (broker stop).
 - Wording fix (fast fills): when the spread is > $0.03, enter at mid + ¼ of the spread (not the full ask); one order per signal.
+- 11:58 user: "Look out for Mak1 and Mak4, and cap Mak2 loss to $10." → today's red-day stand-down is overridden for Mak1/Mak4.
+  Mak2 max loss back to $10/trade (no more premium exceptions). Combined daily stop −$33.79 still applies (room ≈ $22.6 at −$11.18),
+  so any new trade's stop must fit inside the remaining room. Thin single-stock options: also exit by hand when the bid nears the stop.
