@@ -291,3 +291,6 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   to average down once at −3% from the first entry (only if there is no bad news and the stock's daily trend is intact). The sell target becomes
   +1.5% over the average price. Exits at a loss only on bad company news or the broker GTC disaster stop at −10% from the average.
   (The general "never average down" rule still applies to options/Mak1–4.)
+- Update (user, 12:55): "By end of day keep the stocks liquid for the Maks to use the next day, unless we are really bad at losses."
+  → Alpha positions are sold by **15:50 ET** every day (limit at bid − 0.01) if P&L is a profit or a small loss (better than −2% from average).
+  Only a position down more than 2% is held overnight (then the average-down / recover plan continues). Cancel the GTC target before the EOD sale.
