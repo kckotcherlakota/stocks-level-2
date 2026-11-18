@@ -1,24 +1,22 @@
 # STATE
 
-- Last updated: 2026-11-17 (Tue) EOD roll-up. **Flat, no open orders** (checked 15:48 ET; all orders today were this agent's).
-- **Agent budget: $256.22** ($337.85 − $81.63 on 11/17). Profits/losses from agent trades change it.
-  - **Mak1 budget: $169.30** ($225.93 + Mak4 +14 −19 −21, Mak1 −27, Alpha −3.21, fees −0.42). Mak4 and Alpha trade on Mak1's money.
-    Loss cap **$20/trade** (user 11/17) for Mak1 and Mak4. Premium must fit buying power.
-  - **Mak4:** VWAP range / capitulation reversion + range-edge fades (PLAYBOOK 11/17). $20 cap.
-  - **Mak3 budget: $60.00** (gap fade). ≤ $45 premium, ≤ $10 loss. No trades yet — **Wed NVDA gap is the candidate.**
-  - **Mak2 budget: $26.92** ($51.92 − $25 HD). Loss cap $10 (user 11/17).
-  - **Alpha (stocks, user 11/17):** uses free agent cash when the Maks are idle; sell at +1.5%; no stop; average down at −3%;
-    exit at a loss only on bad news / −10% from avg; flat by 15:50 unless > 2% down. Today: KHC −$0.58, AS −$2.63.
-- **Cash floor (never go below): $3.48.** Account cash $259.70 = budget $256.22 + floor $3.48 ✓.
-- **Week of 2026-11-16 agent P&L: −$38.90** (Mon +$42.73, Tue −$81.63). Weekly kill switch **raised by $50 to −$117.57** (user 11/17) → **$78.67 room left.**
-  Weekly target $100 → $138.90 to go (not realistic; capital protection first — the user knows the numbers).
-- User 11/17 (12:06/12:56): Mak1 + Mak4 run until the weekly goal; no daily stop; squeeze every opportunity but protect capital.
-  Weekly kill switch still applies. Per-trade caps $20.
-- **Wed 11/18 (user 11/17, option 2):** 2 contracts on A-setups only, ≤ $40 loss/trade, scale out 1 at +50%; stop after 2 losses or day −$50 (PLAYBOOK).
-- Wed 11/18: **NVDA reported after the close 11/17** → gap day. Plan in journal/2026-11-17.md (EOD). Also check FMP calendar for data.
-- Wake-up: trigger for Wed 11/18 08:47 ET (see CLAUDE.md). Session cron backup 54e92fbf (session-only; recreate if missing).
-- **Trade score (user 11/17):** +5,000 per green trade, −10,000 per red trade. Running score from Wed 11/18: **0**. Day score must end ≥ 0; weekly score resets Monday and drops to 0 after any day that lowers it (PLAYBOOK).
-- **Month goal (user 11/17): account to $500 by end of Nov** (from $259.70 = +$240, ≈ +93% in ~9 trading days; Thanksgiving 11/27 closed,
-  11/28 half day). Agent view: very unlikely without large losses risk; pursue only via A-setups + scale-out + compounding wins;
-  stops and the weekly kill switch stay. The user was told this honestly.
-- ⚠️ 11/10: ANOTHER agent traded this account (SPY 753C, ≈ −$7.09). None since (11/17 all orders agent-initiated by me). Keep checking.
+- Last updated: 2026-11-18 (Wed) roll-up at 13:30 ET. **Flat, no open orders** (last good Robinhood read 13:22 ET; the Robinhood MCP
+  asked for re-sign-in at 13:28, so the roll-up could not re-read the account — **verify on the next "hi"**).
+- **Agent budget: $143.77** ($256.22 − $112.45 on 11/18). Account cash **$147.25** = budget + floor $3.48.
+  - **Mak1 budget: $56.85** ($169.30 − $112.45; all 5 losing trades on 11/18 were Mak1/Mak4 on SPY). Mak4 and Alpha trade on Mak1's money.
+  - **Mak3 budget: $60.00** (gap fade) — untouched. **Mak2 budget: $26.92** — untouched.
+  - Buying power now fits only ONE SPY contract up to ≈ $1.40 premium.
+- **Cash floor (never go below): $3.48.**
+- **Week of 2026-11-16 agent P&L: −$151.35** (Mon +$42.73, Tue −$81.63, Wed −$112.45). Weekly kill switch −$117.57 is **BREACHED**
+  (the user lifted it for Wed only: "full override until I turn green" / "Full gas and override"; then "Stop" at 13:22).
+  → **No live trades Thu 11/19 / Fri 11/20 unless the user explicitly re-authorizes and sets a floor.** Ask on "hi".
+- **Trade score:** Wed 11/18 = −50,000 (0 W / 5 L). Weekly score = 0. Rules in PLAYBOOK (+5,000 green / −10,000 red; day must end ≥ 0).
+- **Targets the user stated:** account $300 (11/18), $500 by end of Nov (11/17). Agent view (told to the user): not reachable from
+  $147 without risking most of the account; do not raise size or drop stops to chase them.
+- Sizing if trading resumes: 1 contract, loss ≤ $15–20 per trade, max 2 trades/day, A+ setups on TREND days only, take profit at the
+  bid at +25% (LESSONS 11/18).
+- Scan cadence: every **1 minute** when flat, 20–30 s with a position (user 11/18). Monitor + session cron were stopped at 13:22 on the
+  user's "Stop"; re-create both on the next trading day.
+- Wake-up: see CLAUDE.md (Thu 11/19 08:47 ET trigger).
+- ⚠️ 11/10: ANOTHER agent traded this account (SPY 753C, ≈ −$7.09). None seen since (11/18 orders through 13:22 were all mine). Keep checking.
+- ⚠️ Robinhood MCP sign-in expired 11/18 13:28 — the user must re-authorize the connector in claude.ai settings.

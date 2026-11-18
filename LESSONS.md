@@ -1,5 +1,27 @@
 # LESSONS (newest first)
 
+## 2026-11-18 — −$112 day, 0 wins / 5 losses in 70 minutes: overtrading a chop range under pressure
+- **Five stop-outs inside a 2.5-point box = no edge, stop.** SPY 729.7–732.4 from 12:40; calls and puts both got stopped by wicks and
+  price came back each time. After 2 losses in a range the day is a RANGE day: stand down or only fade the edges; a 3rd, 4th and 5th
+  trade is just paying the spread and theta. The 2-loss day stop exists for exactly this.
+- **Overrides don't create edge.** The user lifted the day stop, the weekly kill switch and the floor ("full gas"). I said stop at
+  12:34, 12:46, 13:16, 13:20 and then traded anyway each time I was told to; those 3 trades lost $64. Next time: when I have no edge,
+  say so once, clearly, and do NOT place the trade — offer "watch only" instead. Following an instruction into a trade I rate
+  negative-EV is not service. Hold the weekly kill switch unless the user changes it in a calm moment (pre-market), not mid-drawdown.
+- **Take the profit at the bid; never "manage" a 1-contract winner.** Trade 1 was +$23 and trade 4 was +$27 (+17%) — both ended as
+  losses (−$18, −$31). With 1 contract there is no scale-out: sell at the bid at +15–25% or at the first stall (2 flat 1-min bars).
+  Do not tighten the stop into noise (trade 1) and do not wait for a bar close when the reversal is visible (trade 4).
+- **Don't chase after being told off for missing a move.** Trade 2 (734C at 733.7, 2.3 pts above VWAP after a 6-pt run) broke my own
+  "no chase" call from 5 minutes earlier, right after the user asked why I miss breakouts. A missed move is free; a chased one cost $30.
+- **Option stops of $15–30 on 1 ATM/OTM 0DTE contract = 0.3–0.6 SPY points = 1-minute noise.** If the structure stop (beyond the
+  level) costs more than the cap, skip the trade; don't shrink the stop to fit the cap.
+- **Waiting for the 1-minute close saved money 5 times** (12:39, 12:50, 12:55, 13:01–13:06): every "touch" trigger reversed. Keep it.
+- **Session restart wiped Monitor + cron → missed 9:30–10:56.** Arm the scanner right after the pre-market check and re-check on every
+  turn (now in CLAUDE.md).
+- **Mak2 on earnings movers (TJX/TGT/LOW): weekly option spreads 10–40%** → untradeable at this size. Only names with ≤ 5% spreads.
+- **Buying power:** under ~$200 the account cannot hold 2 SPY contracts, so the 2-contract scale-out plan is void; plan for 1.
+- **Robinhood MCP sign-in can expire mid-day** (13:28). Check it at the pre-market "hi"; with a position open this would be an outage.
+
 ## 2026-11-17 — ≈ −$79 day (1W / 4L options, KHC scratch): pre-NVDA range day; I traded it like a trend day
 - **Pre-earnings (NVDA) afternoons are ranges.** SPY ping-ponged 728–734.5 from 11:30 on; every VWAP reclaim (12:15, 13:25, 14:10)
   and every breakdown (14:00) reversed within 1–3 bars. Waiting for the retest kept me out of 3 losers (≈ −$45 saved).

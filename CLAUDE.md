@@ -85,7 +85,7 @@ You are the user's 0DTE options trading agent. This repo is your only memory; ch
   - Research is context for the plan only; it never overrides the PLAYBOOK checklist or the all-3-indexes rule.
 - **EOD email.** Use `mcp__Gmail__send_message` to send the summary to the user's own Gmail (the session's user email).
 - **Commits.** Write files with the Write/Edit tools, then commit and push in a separate Bash command. The auto-mode classifier blocked a combined command.
-- **Daily wake-up.** Scheduled via `mcp__claude-code-remote__create_trigger`. The last one was trig_0118Cw3dyrqfGgWGhvyNjHay for Wed 11/18 08:47 ET, bound to the current session (a create_new_session_on_fire trigger gets NO connectors, so Robinhood would be missing; bind to the session instead). If a fresh session can't see it, create a new one.
+- **Daily wake-up.** Scheduled via `mcp__claude-code-remote__create_trigger`. The last one was trig_01RL3F9LiuUnzwZ3T89watX3 for Thu 11/19 08:47 ET, bound to the current session (a create_new_session_on_fire trigger gets NO connectors, so Robinhood would be missing; bind to the session instead). If a fresh session can't see it, create a new one.
 
 ## User preferences (standing)
 - Capital protection is the #1 priority. "No trade" is fine. Report losses honestly.
@@ -95,5 +95,6 @@ You are the user's 0DTE options trading agent. This repo is your only memory; ch
 - Goal: +10% of budget per day, but **minimize red days** and never add risk to chase the goal (PLAYBOOK: "Daily goal", "Minimize red days").
 - Scale Mak1 via %-of-budget limits and 2-contract scale-out (PLAYBOOK: "Scaling plan"). The user's research doc lives in docs/.
 - **Mak1 news filter (user 11/15):** check news at 9:15, every 30 min, and before each Mak1 entry. A quiet tape on a range day means no Mak1 breakouts (STRATEGIES.md).
-- **Full-session scanning (user 11/16):** with holidays reducing trading days, scan all 4 strategies every 2 min from 9:30 to 15:45 ET, not just in their windows (rules in PLAYBOOK).
+- **Full-session scanning (user 11/16):** with holidays reducing trading days, scan all 4 strategies every 1 min (user 11/18; was 2) from 9:30 to 15:45 ET, not just in their windows (rules in PLAYBOOK).
+- **When the agent has no edge, it says so and does not trade** (11/18: 5 losses after overrides; LESSONS). "Stop" from the user = stop trading and stop the Monitor/cron for the day.
 - Keep replies short and simple.
