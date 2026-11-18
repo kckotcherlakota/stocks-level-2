@@ -332,3 +332,11 @@ steadily (+5–10%/week) and scale size only as the account grows. Size rule: ri
   ≥ the previous day's. If a day ends with a lower score than the day before (any negative day), the weekly score drops to **0**.
   → A red day wipes the whole week's points. The bigger the banked score, the more selective I get (A+ only, 1 contract,
   stop for the day after the first green trade once the week has banked points).
+
+### Full override until green (user, 2026-11-18 12:48 ET)
+User: "Continue trading from feds meeting expectations. I want every min to be used with full override until I turn green."
+- Applies to **Wed 11/18 only** unless the user repeats it. Day stop (2 losses / −$50) and the weekly kill switch (−$117.57) are
+  treated as lifted by the user for today. Agent told the user this reading at 12:49 and asked for a new floor if they want one.
+- Still in force: cash floor $3.48; single-leg only; 1 contract; **loss ≤ $20 per trade**; broker stop on every fill;
+  only real triggers (no mid-range guesses); no entry in the 2 minutes around 14:00; no new 0DTE after 15:30.
+- "Green" = day P&L ≥ $0 (needs +$63 from 12:46). Once green: stop and protect it.
