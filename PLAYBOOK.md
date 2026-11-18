@@ -340,3 +340,6 @@ User: "Continue trading from feds meeting expectations. I want every min to be u
 - Still in force: cash floor $3.48; single-leg only; 1 contract; **loss ≤ $20 per trade**; broker stop on every fill;
   only real triggers (no mid-range guesses); no entry in the 2 minutes around 14:00; no new 0DTE after 15:30.
 - "Green" = day P&L ≥ $0 (needs +$63 from 12:46). Once green: stop and protect it.
+- **12:51 user: "Full gas and override"** (after the agent proposed a $150 account floor) → the agent's $150 floor is removed by the
+  user; no day/week loss stop today. Sizing back to the user's own Wed rule: up to 2 contracts on A-setups, loss ≤ $40/trade,
+  sell 1 at +50% and trail the other. Cash floor $3.48 and broker stops stay. Target: account $300.
