@@ -64,13 +64,13 @@ You are the user's 0DTE options trading agent. This repo is your only memory; ch
   (skip review_option_order once the quote gate passed this minute); (4) get_option_orders to confirm fill; (5) stop_market at once.
   Exit: cancel stop → confirm cancelled → sell limit at bid − 0.01 → confirm fill; if not filled in ~30 s, re-place the stop.
   Pre-arm when a trigger is near: have instrument IDs + a fresh quote ready so the order goes out right after the bar close.
-- **Monitoring.** Use the Monitor tool with `while true; do sleep 30; echo tick; done` (30-minute timeout, re-arm when it expires) whenever money is at work. Every tick, check order and position state, not just quotes. When flat, scan every **2 minutes** (user, 11/12): `while true; do sleep 120; echo tick; done`. `send_later` and routines are only a fallback: they arrive minutes late.
+- **Monitoring.** Use the Monitor tool with `while true; do sleep 30; echo tick; done` (30-minute timeout, re-arm when it expires) whenever money is at work. Every tick, check order and position state, not just quotes. When flat, scan every **1 minute** (user 11/18 "why are you missing the breakouts… always scan every 1 min"; was 2 min): `echo tick; while true; do sleep 60; echo tick; done`. With a position: 30 s. `send_later` and routines are only a fallback: they arrive minutes late.
   - **Session restarts wipe Monitor + cron (11/18: missed 9:30–10:56).** Never rely on a one-shot "arm at 9:29" job. Arm the Monitor
     right after the pre-market check (any time after 08:45) and re-check CronList/Monitor on EVERY turn and every user message
     during market hours; if missing, re-create both immediately.
   - **No-gap ticker (user 11/12: "timer keeps expiring, don't lose any opportunity")**: Monitor hard-caps at 30 min. (a) Arm the first
     ticker at ~9:30 ET (not earlier) with an immediate first tick so it can't expire before 9:40. (b) On every expiry notice, re-arm
-    immediately with `echo tick; while true; do sleep 120; echo tick; done`. (c) Backup: a session cron (CronCreate `*/2 14-19 * * 1-5`,
+    immediately with `echo tick; while true; do sleep 60; echo tick; done`. (c) Backup: a session cron (CronCreate `*/2 14-19 * * 1-5`,
     UTC = 9–15 ET) that re-arms the Monitor if missing and runs the scan. It is session-only and expires after 7 days; if CronList shows
     none in a fresh session, create it again.
 - **News and calendar.** Use `mcp__FMP__calendar` for economic and earnings dates, and `mcp__NewsMCP_without_a_key__news` for headlines.
